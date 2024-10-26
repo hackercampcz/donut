@@ -3764,7 +3764,7 @@ __metadata:
     "@hackercamp/infrastructure": "workspace:infrastructure"
     "@hackercamp/lib": "workspace:lib"
     "@thi.ng/transducers": "npm:9.2.7"
-    "@types/node": "npm:22.8.0"
+    "@types/node": "npm:22.8.1"
     algoliasearch: "npm:5.10.2"
     fast-xml-parser: "npm:4.5.0"
     immutable: "npm:4.3.7"
@@ -6677,12 +6677,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.8.0":
-  version: 22.8.0
-  resolution: "@types/node@npm:22.8.0"
+"@types/node@npm:22.8.1":
+  version: 22.8.1
+  resolution: "@types/node@npm:22.8.1"
   dependencies:
     undici-types: "npm:~6.19.8"
-  checksum: 10c0/21eb10cee768d32e965d095415a4c6a7752f26bfcc34a8c1d7ab3989a6ab13a51761cc245909570d59c6bdacbdfd055d307dc6b201ac04305c57e65c1e7bf5be
+  checksum: 10c0/83550fdf72a7db5b55eceac3f4fb038844eaee20202bdd2297a8248370cfa08317bda1605b781a8043eda4f173b75e73632e652fc85509eb14dfef78fa17337f
   languageName: node
   linkType: hard
 

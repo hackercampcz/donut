@@ -10,7 +10,7 @@
     "@hckr_/blendid": "8.7.1",
     "@types/nunjucks": "3.2.6",
     "dotenv-cli": "7.4.2",
-    "dprint": "0.47.4",
+    "dprint": "0.47.5",
     "npm-run-all2": "7.0.1",
     "undertaker-registry": "2.0.0"
   },

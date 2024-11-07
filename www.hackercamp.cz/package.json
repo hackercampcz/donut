@@ -5,6 +5,6 @@
     "@material/layout-grid": "14.0.0"
   },
   "devDependencies": {
-    "wrangler": "3.84.1"
+    "wrangler": "3.85.0"
   }
 }

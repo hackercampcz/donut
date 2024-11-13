@@ -3828,7 +3828,7 @@ __metadata:
     "@hackercamp/api": "workspace:api.hackercamp.cz"
     "@hackercamp/donut": "workspace:donut.hackercamp.cz"
     "@pulumi/aws": "npm:6.59.1"
-    "@pulumi/awsx": "npm:2.18.0"
+    "@pulumi/awsx": "npm:2.18.1"
     "@pulumi/cloudflare": "npm:5.43.0"
     "@pulumi/pulumi": "npm:3.138.0"
     "@topmonks/pulumi-aws": "npm:3.1.4"
@@ -4995,9 +4995,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pulumi/awsx@npm:2.18.0":
-  version: 2.18.0
-  resolution: "@pulumi/awsx@npm:2.18.0"
+"@pulumi/awsx@npm:2.18.1":
+  version: 2.18.1
+  resolution: "@pulumi/awsx@npm:2.18.1"
   dependencies:
     "@aws-sdk/client-ecs": "npm:^3.405.0"
     "@pulumi/aws": "npm:^6.58.0"
@@ -5006,7 +5006,7 @@ __metadata:
     "@types/aws-lambda": "npm:^8.10.23"
     docker-classic: "npm:@pulumi/docker@3.6.1"
     mime: "npm:^2.0.0"
-  checksum: 10c0/9745b73259f9cd92c7d8a368123f3a5b9d9bc5e6fb1ef76c596229ccba990ba3909700c4a45399fff402a0878414de3fee9b1e2b23468c8b1d006b6be71be59e
+  checksum: 10c0/17a07a894d78fdea54d65b5a8b156bc2c0206857865fe7847dc5330479f085dce46e6ab51fb707bdc5accbdefe2d57781aa6f03757e3acbf6993f9442fecefbf
   languageName: node
   linkType: hard
 

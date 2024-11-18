@@ -77,7 +77,7 @@ commands:
         type: string
       distribution_folder:
         type: string
-        default: dist
+        default: .blendid
     steps:
       - run:
           name: Deploy website
@@ -196,7 +196,7 @@ jobs:
           command: yarn build:<< parameters.site_name >>
       - persist_to_workspace:
           root: .
-          paths: [dist]
+          paths: [.blendid]
       - slack/notify:
           event: fail
           template: basic_fail_1
@@ -214,11 +214,11 @@ jobs:
       - run:
           name: Build website << parameters.site_name >>
           command: |
-            mkdir -p dist/<< parameters.site_name >>
-            cp << parameters.site_name >>/public/* dist/<< parameters.site_name >>/
+            mkdir -p .blendid/<< parameters.site_name >>
+            cp << parameters.site_name >>/public/* .blendid/<< parameters.site_name >>/
       - persist_to_workspace:
           root: .
-          paths: [dist]
+          paths: [.blendid]
       - slack/notify:
           event: fail
           template: basic_fail_1

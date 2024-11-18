@@ -1,5 +1,5 @@
-@use "@material/layout-grid/mdc-layout-grid";
-@use "@material/chips/styles";
+@import "@material/layout-grid/dist/mdc.layout-grid.css";
+@import "@material/chips/dist/mdc.chips.css";
 
 code {
   font-family: inherit;

@@ -1,16 +1,14 @@
 /** @typedef {import("@types/nunjucks").Environment} Environment */
+
 export default {
   images: false,
-  cloudinary: { extensions: ["jpg", "jpeg", "png", "gif", "avif", "webp", "svg"] },
+  cloudflare: true,
+  cloudinary: true,
   fonts: true,
   svgSprite: true,
-  javascripts: false,
+  static: true,
+
   stylesheets: true,
-  workboxBuild: false,
-
-  static: { srcConfig: { encoding: false } },
-
-  generate: { redirects: [{ collection: "redirects", host: "https://donut.hackercamp.cz", route: (x) => x[0] }] },
 
   html: {
     dataFile: "global.mjs",
@@ -60,5 +58,5 @@ export default {
     browserArgs: "--ignore-certificate-errors --allow-insecure-localhost"
   },
 
-  production: { rev: { exclude: ["favicon.ico", "robots.txt", "humans.txt", "_redirects", "_headers"] } }
+  production: { rev: true }
 };

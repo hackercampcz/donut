@@ -1,4 +1,4 @@
-@use "@material/layout-grid/mdc-layout-grid";
+@import "@material/layout-grid/dist/mdc.layout-grid.css";
 
 img.responsive {
   width: 100%;
@@ -15,10 +15,12 @@ img.responsive {
     flex-direction: column;
     justify-content: center;
   }
+
   .hc-camp-detail {
     position: relative;
     z-index: 1;
   }
+
   .hc-camp-detail::before {
     content: "";
     position: absolute;
@@ -26,11 +28,12 @@ img.responsive {
     height: 260px;
     right: -20px;
     z-index: -1;
-    background-image: cloudinaryUrl("www.hackercamp.cz/lines.png");
+    background-image: cloudinary-url("www.hackercamp.cz/lines.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
   }
+
   .hc-camp-detail::after {
     content: "";
     position: absolute;
@@ -39,14 +42,13 @@ img.responsive {
     bottom: -68px;
     right: 70px;
     z-index: -1;
-    background-image: cloudinaryUrl("www.hackercamp.cz/gray-dots.png");
+    background-image: cloudinary-url("www.hackercamp.cz/gray-dots.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
   }
 
-  .hc-camp-detail img,
-  .hc-camp-detail video {
+  .hc-camp-detail img, .hc-camp-detail video {
     width: 80%;
     max-width: 622px;
   }
@@ -65,9 +67,10 @@ img.responsive {
       bottom: -22px;
       right: -22px;
       z-index: -1;
-      background-image: cloudinaryUrl("www.hackercamp.cz/gay-dots.png");
+      background-image: cloudinary-url("www.hackercamp.cz/gay-dots.png");
     }
   }
+
   .hc-card.hc-card--superdecorated {
     width: 66%;
     max-width: 1000px;
@@ -85,8 +88,8 @@ img.responsive {
       background-image: var(--hc-gradient);
       transition: width 0.4s ease, height 0.4s ease;
     }
-    &:active::before,
-    &:hover::before {
+
+    &:is(:active, :hover)::before {
       width: 75%;
       height: 75%;
     }
@@ -99,7 +102,7 @@ img.responsive {
       bottom: -22px;
       right: -22px;
       z-index: -1;
-      background-image: cloudinaryUrl("www.hackercamp.cz/gay-dots.png");
+      background-image: cloudinary-url("www.hackercamp.cz/gay-dots.png");
     }
   }
 }
@@ -115,8 +118,8 @@ img.responsive {
 }
 
 .hc-people-bg {
-  background: #82140d cloudinaryUrl("www.hackercamp.cz/IMG_20210902_213129.jpg", (effect: "blur:300" )) no-repeat
-    50% 50%;
+  background: #82140d
+    cloudinary-url("www.hackercamp.cz/IMG_20210902_213129.jpg", '{"effect": "blur:300"}') no-repeat 50% 50%;
   background-size: cover;
   height: 440px;
 
@@ -149,71 +152,68 @@ img.responsive {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #d3a684 cloudinaryUrl("www.hackercamp.cz/bg-camp.png") no-repeat
+  background: #d3a684 cloudinary-url("www.hackercamp.cz/bg-camp.png") no-repeat
     50% 50%;
   background-size: cover;
 }
 
 @media screen and (min-resolution: 2dppx) {
   .hc-camp-bg {
-    background-image: cloudinaryUrl(
-      "www.hackercamp.cz/bg-camp.png",
-      (
-        dpr: 2
-      )
-    );
+    background-image: cloudinary-url("www.hackercamp.cz/bg-camp.png", '{"dpr": 2}');
   }
+
   .hc-people-bg {
-    background-image: cloudinaryUrl(
-      "www.hackercamp.cz/IMG_20210902_213129.jpg",
-      (
-        dpr: 2,
-        effect: "blur:300"
-      )
-    );
+    background-image: cloudinary-url("www.hackercamp.cz/IMG_20210902_213129.jpg", '{"dpr": 2, "effect": "blur:300"}');
   }
 }
 
 @media screen and (prefers-color-scheme: light) {
   .hc-code-bg {
-    background: cloudinaryUrl("www.hackercamp.cz/bg-light-1x.png") repeat-x;
+    background: cloudinary-url("www.hackercamp.cz/bg-light-1x.png") repeat-x;
   }
 }
 
 .hc-price-list {
-  &__item {
+  .hc-price-list__item {
     h3 {
       margin: 6px 0 0;
     }
+
     hgroup h3 {
       margin-bottom: 0;
     }
+
     hgroup h4 {
       font-weight: normal;
       margin-top: 0;
     }
   }
-  &__header {
+
+  .hc-price-list__header {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     height: 86px;
   }
-  &__badge {
+
+  .hc-price-list__badge {
     padding-right: 1em;
     flex-grow: 0;
     flex-shrink: 0;
   }
-  &__value {
+
+  .hc-price-list__value {
     font-size: 1.5em;
     font-weight: bold;
   }
-  &__text {
+
+  .hc-price-list__text {
     text-align: center;
     max-width: 40em;
     margin: 0 auto 4em;
   }
-  &__text:last-of-type {
+
+  .hc-price-list__text:last-of-type {
     margin: 4em auto 0;
   }
 }
@@ -227,6 +227,7 @@ img.responsive {
 .hc-people-section .hc-card {
   margin: var(--mdc-layout-grid-margin-phone);
 }
+
 @media screen and (min-width: 600px) and (max-width: 839px) {
   .hc-people-section .hc-card {
     margin: var(--mdc-layout-grid-margin-tablet);
@@ -244,12 +245,15 @@ img.responsive {
   .mdc-layout-grid__inner {
     gap: 0;
   }
+
   @media screen and (min-width: 600px) {
     .mdc-layout-grid__inner {
       margin-bottom: 6em;
     }
+
     .hc-card:first-child {
       position: relative;
+
       &::before {
         content: "";
         position: absolute;
@@ -258,9 +262,10 @@ img.responsive {
         width: 175px;
         height: 238px;
         z-index: -1;
-        background-image: cloudinaryUrl("www.hackercamp.cz/gray-dots.png");
+        background-image: cloudinary-url("www.hackercamp.cz/gray-dots.png");
       }
     }
+
     .mdc-layout-grid__cell + .mdc-layout-grid__cell {
       transform: translateY(6em);
     }
@@ -271,8 +276,7 @@ img.responsive {
   width: 100%;
   max-width: var(--hc-layout-width);
 
-  a:link,
-  a:visited {
+  a:link, a:visited {
     color: #fff;
     text-decoration: none;
   }
@@ -295,6 +299,7 @@ img.responsive {
     h2 {
       margin: 1em auto 1.5em;
     }
+
     .mdc-layout-grid__cell {
       padding: 4em 0;
     }
@@ -349,7 +354,6 @@ img.responsive {
     min-height: 8em;
   }
 }
-
 
 #faq {
   max-width: 60em;

@@ -1,14 +1,13 @@
-import postcssGamutMapping from "@csstools/postcss-gamut-mapping";
 import projectPath from "@hckr_/blendid/lib/projectPath.mjs";
-import logger from "fancy-log";
 import gulpMode from "gulp-mode";
 import fs from "node:fs";
 import path from "node:path";
 import OpenProps from "open-props";
 import jitProps from "postcss-jit-props";
-import DefaultRegistry from "undertaker-registry";
 import data from "../src/data/global.mjs";
-import pathConfig from "./path-config.json" with { type: "json" };
+import { HackersRegistry } from "./hackers-registry.mjs";
+import pathConfig from "./path-config.mjs";
+import { WorkboxBuildRegistry } from "./workboxbuild.mjs";
 
 /** @typedef {import("@types/nunjucks").Environment} Environment */
 
@@ -23,41 +22,6 @@ function assetPath(destPath, key) {
   return path.join(destPath, key);
 }
 
-class HackersRegistry extends DefaultRegistry {
-  constructor(config, pathConfig) {
-    super();
-    this.config = config;
-    this.dest = projectPath(pathConfig.src, pathConfig.data.src, "hackers.json");
-  }
-  init({ task }) {
-    async function getSlackProfiles(token) {
-      logger.info("Loading Slack profiles…");
-      const skip = new Set(["slackbot", "jakub"]);
-      const resp = await fetch("https://slack.com/api/users.list", { headers: { Authorization: `Bearer ${token}` } });
-      const data = await resp.json();
-      if (!resp.ok) {
-        logger.warn("Slack profiles:", data.error);
-      }
-      return new Map(data.members?.filter((x) => !(x.is_bot || skip.has(x.name)))?.map((x) => [x.id, x.profile]));
-    }
-
-    async function getAttendees(year) {
-      logger.info(`Loading ${year} attendees…`);
-      const resp = await fetch(`https://api.hackercamp.cz/v1/attendees?year=${year}`);
-      return resp.json();
-    }
-
-    task("prepare-data", async () => {
-      const [profiles, items] = await Promise.all([
-        getSlackProfiles(this.config.slackToken),
-        getAttendees(this.config.year)
-      ]);
-      const attendees = items.map((x) => [x.slug, profiles.get(x.slackID), x]);
-      return fs.promises.writeFile(this.dest, JSON.stringify(attendees, null, 2), { encoding: "utf-8" });
-    });
-  }
-}
-
 /**
  * @param {Date|null} x
  * @returns {string|null}
@@ -68,15 +32,14 @@ const formatDateTime = (x) =>
 
 export default {
   images: true,
+  cloudflare: true,
   cloudinary: true,
   fonts: true,
   svgSprite: true,
-  javascripts: false,
-  stylesheets: { postcss: { postcss: { plugins: [postcssGamutMapping(), jitProps(OpenProps)] } } },
+  static: true,
+  esbuild:true,
 
-  static: { srcConfig: { encoding: false } },
-
-  esbuild: { define: { __DEVELOPMENT__: mode.development() ? "true" : "undefined" } },
+  stylesheets: { postcss: { plugins: [jitProps(OpenProps)] } },
 
   html: {
     dataFile: "global.mjs",
@@ -113,23 +76,27 @@ export default {
 
   vite: { browser: "google chrome canary", browserArgs: "--ignore-certificate-errors --allow-insecure-localhost" },
 
-  workboxBuild: {
-    swSrc: () => assetPath(projectPath(pathConfig.dest), "assets/esm/sw.js"),
-    swDest: projectPath(pathConfig.dest, "assets/esm/sw.js"),
-    globDirectory: pathConfig.dest,
-    globPatterns: ["**/*.html", "assets/**/*.{js,mjs,css}"],
-    globIgnores: [
-      "hackers/**/*.html",
-      "admin/**/*.html",
-      "ubytovani/**/*.html",
-      "program/**/*.html",
-      "registrace/**/*.html"
-    ]
-  },
+  production: { rev: true },
 
-  production: { rev: { exclude: ["favicon.ico", "robots.txt", "humans.txt", "_redirects", "_headers"] } },
+  registries: [
+    new HackersRegistry({ slackToken: process.env["SLACK_TOKEN"], year: data.year }, pathConfig),
+    new WorkboxBuildRegistry({
+      swSrc: () => assetPath(projectPath(pathConfig.dest), "assets/esm/sw.js"),
+      swDest: projectPath(pathConfig.dest, "assets/esm/sw.js"),
+      globDirectory: pathConfig.dest,
+      globPatterns: ["**/*.html", "assets/**/*.{js,mjs,css}"],
+      globIgnores: [
+        "hackers/**/*.html",
+        "admin/**/*.html",
+        "ubytovani/**/*.html",
+        "program/**/*.html",
+        "registrace/**/*.html"
+      ]
+    }, pathConfig)
+  ],
 
-  registries: [new HackersRegistry({ slackToken: process.env["SLACK_TOKEN"], year: data.year }, pathConfig)],
-
-  additionalTasks: { development: { prebuild: ["prepare-data"] }, production: { prebuild: ["prepare-data"] } }
+  additionalTasks: {
+    development: { prebuild: ["prepare-data"], postbuild: ["workboxBuild"] },
+    production: { prebuild: ["prepare-data"], postbuild: ["workboxBuild"] }
+  }
 };

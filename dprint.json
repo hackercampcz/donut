@@ -17,10 +17,7 @@
     "html.normal.selfClosing": false,
     "html.void.selfClosing": false
   },
-  "malva": {
-    "hexColorLength": "short",
-    "linebreakInPseudoParens": true
-  },
+  "malva": false,
   "excludes": [
     "**/node_modules",
     "**/*-lock.json"

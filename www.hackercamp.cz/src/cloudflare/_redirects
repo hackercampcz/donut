@@ -1,3 +1,4 @@
+/admin https://donut.hckr.camp/admin/
 /r/dobrovolnik /registrace/?volunteer=1
 /r/:slackID /registrace/?referral=:slackID
 /join/slack https://join.slack.com/t/hackercampworkspace/shared_invite/zt-1fbbmqd4x-~SnrAkSZU6LImDRPzD56ag

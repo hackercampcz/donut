@@ -96,7 +96,13 @@
 
 {% block javascript %}
 <script type="module">
-  import {main} from "/assets/esm/index.js?v24.8.1";
+  import { main } from "/assets/esm/index.js";
+
+  if (import.meta.hot) {
+    import.meta.hot.accept((newModule) => {
+      console.log(newModule)
+    })
+  }
   const build = {{ build | dump(8) | safe }};
   const env = Object.assign({ year: {{ year }} }, build);
   main({

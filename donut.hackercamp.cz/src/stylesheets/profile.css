@@ -8,7 +8,5 @@
 .hc-profile p {
   margin-bottom: 0;
 }
-.hc-profile__photo {
-}
-.hc-profile__photo img {
-}
+.hc-profile__photo {}
+.hc-profile__photo img {}

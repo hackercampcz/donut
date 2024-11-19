@@ -3156,7 +3156,7 @@ __metadata:
   dependencies:
     "@hckr_/blendid": "npm:9.0.0-beta.19"
     "@types/nunjucks": "npm:3.2.6"
-    dotenv-cli: "npm:7.4.2"
+    dotenv-cli: "npm:7.4.3"
     dprint: "npm:0.47.5"
     npm-run-all2: "npm:7.0.1"
     undertaker-registry: "npm:2.0.0"
@@ -7047,9 +7047,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-cli@npm:7.4.2":
-  version: 7.4.2
-  resolution: "dotenv-cli@npm:7.4.2"
+"dotenv-cli@npm:7.4.3":
+  version: 7.4.3
+  resolution: "dotenv-cli@npm:7.4.3"
   dependencies:
     cross-spawn: "npm:^7.0.3"
     dotenv: "npm:^16.3.0"
@@ -7057,7 +7057,7 @@ __metadata:
     minimist: "npm:^1.2.6"
   bin:
     dotenv: cli.js
-  checksum: 10c0/7841bfaa78975aa6b51e529bf5795e062bc6e595021d1931427bb55a6f75e1775d944f4dd91bef8accbbd539c466bfee48fa804e0f6b3a1bcf18ae7de0d64bed
+  checksum: 10c0/b147c7445154edb36d589841fefe50f1f6b984fbc1a6118e710ea6076c6c31e1eb33e92b32a44aa4f3a48cd7d19b7502c65ed04b5a1089fcee08b974e2616a6c
   languageName: node
   linkType: hard
 

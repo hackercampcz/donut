@@ -30,6 +30,6 @@
     "postcss-jit-props": "1.0.14",
     "web-types-lit": "0.1.0",
     "workbox-build": "7.3.0",
-    "wrangler": "3.88.0"
+    "wrangler": "3.89.0"
   }
 }

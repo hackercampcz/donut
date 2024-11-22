@@ -1,6 +1,6 @@
 {
   "name": "@hackercamp/lib",
-  "packageManager": "yarn@4.5.1",
+  "packageManager": "yarn@4.5.2",
   "dependencies": {
     "jose": "5.9.6"
   }

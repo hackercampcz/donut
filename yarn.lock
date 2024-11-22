@@ -3567,7 +3567,7 @@ __metadata:
   dependencies:
     "@hckr_/blendid": "npm:9.0.0-beta.19"
     "@types/nunjucks": "npm:3.2.6"
-    dotenv-cli: "npm:7.4.3"
+    dotenv-cli: "npm:7.4.4"
     dprint: "npm:0.47.5"
     npm-run-all2: "npm:7.0.1"
     undertaker-registry: "npm:2.0.0"
@@ -7098,6 +7098,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cross-spawn@npm:^7.0.6":
+  version: 7.0.6
+  resolution: "cross-spawn@npm:7.0.6"
+  dependencies:
+    path-key: "npm:^3.1.0"
+    shebang-command: "npm:^2.0.0"
+    which: "npm:^2.0.1"
+  checksum: 10c0/053ea8b2135caff68a9e81470e845613e374e7309a47731e81639de3eaeb90c3d01af0e0b44d2ab9d50b43467223b88567dfeb3262db942dc063b9976718ffc1
+  languageName: node
+  linkType: hard
+
 "crypto-random-string@npm:^2.0.0":
   version: 2.0.0
   resolution: "crypto-random-string@npm:2.0.0"
@@ -7525,17 +7536,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-cli@npm:7.4.3":
-  version: 7.4.3
-  resolution: "dotenv-cli@npm:7.4.3"
+"dotenv-cli@npm:7.4.4":
+  version: 7.4.4
+  resolution: "dotenv-cli@npm:7.4.4"
   dependencies:
-    cross-spawn: "npm:^7.0.3"
+    cross-spawn: "npm:^7.0.6"
     dotenv: "npm:^16.3.0"
     dotenv-expand: "npm:^10.0.0"
     minimist: "npm:^1.2.6"
   bin:
     dotenv: cli.js
-  checksum: 10c0/b147c7445154edb36d589841fefe50f1f6b984fbc1a6118e710ea6076c6c31e1eb33e92b32a44aa4f3a48cd7d19b7502c65ed04b5a1089fcee08b974e2616a6c
+  checksum: 10c0/180801e02dcc02da4557338f48caa54740e38ffef39c7cd231e283d6fc32f4112186980773344df85a4514db28fdedace94d1b83a706ac39a4f1c2c3a402e71d
   languageName: node
   linkType: hard
 

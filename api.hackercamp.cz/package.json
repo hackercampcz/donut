@@ -3,7 +3,7 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "3.699.0",
     "@aws-sdk/client-sqs": "3.699.0",
-    "@aws-sdk/util-dynamodb": "3.699.0",
+    "@aws-sdk/util-dynamodb": "3.704.0",
     "@fast-csv/format": "5.0.2",
     "@hackercamp/infrastructure": "workspace:infrastructure",
     "@hackercamp/lib": "workspace:lib",

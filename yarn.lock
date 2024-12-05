@@ -3602,7 +3602,7 @@ __metadata:
     lit-html: "npm:3.2.1"
     marked: "npm:15.0.3"
     material-icons: "npm:1.13.12"
-    open-props: "npm:1.7.7"
+    open-props: "npm:1.7.8"
     postcss-jit-props: "npm:1.0.14"
     ramda: "npm:0.30.1"
     rollbar: "npm:2.26.4"
@@ -11184,10 +11184,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open-props@npm:1.7.7":
-  version: 1.7.7
-  resolution: "open-props@npm:1.7.7"
-  checksum: 10c0/4959b66f9d4f2aa912035cdc7626181b931ff82d603bdc027f24d4bb41460fb4bb62005004c5ee47c4e9bec6050a1d75c0326711de1f64e7e90b317d80aac70c
+"open-props@npm:1.7.8":
+  version: 1.7.8
+  resolution: "open-props@npm:1.7.8"
+  checksum: 10c0/089bc34a1241676f0e9389a5043fb423d0e913fa212478ef8e9aa5ffc4ff6fd66832fc6368e6b404db437a9fec2b7625eb7bddea73f09fd16de92b06641616d8
   languageName: node
   linkType: hard
 

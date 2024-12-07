@@ -147,9 +147,9 @@ export function chip({ text, count, selected, view, year }) {
     <span
       class="${
     classMap({
-      "mdc-evolution-chip": true,
-      "mdc-evolution-chip--selectable": true,
-      "mdc-evolution-chip--filter": true,
+      "mdc-chip": true,
+      "mdc-chip--selectable": true,
+      "mdc-chip--filter": true,
       "hc-chip": true,
       "hc-chip--selected": selected
     })
@@ -157,23 +157,23 @@ export function chip({ text, count, selected, view, year }) {
       role="presentation"
     >
       <a
-        class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
+        class="mdc-chip__action mdc-chip__action--primary"
         role="option"
         aria-selected="${selected ? "true" : "false"}"
         tabindex="0"
         href="?${new URLSearchParams({ view, year })}"
       >
         <span
-          class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
+          class="mdc-chip__ripple mdc-chip__ripple--primary"
         ></span>
-        <span class="mdc-evolution-chip__graphic">
-          <span class="mdc-evolution-chip__checkmark">
+        <span class="mdc-chip__graphic">
+          <span class="mdc-chip__checkmark">
             <svg
-              class="mdc-evolution-chip__checkmark-svg"
+              class="mdc-chip__checkmark-svg"
               viewBox="-2 -3 30 30"
             >
               <path
-                class="mdc-evolution-chip__checkmark-path"
+                class="mdc-chip__checkmark-path"
                 fill="none"
                 stroke="black"
                 d="M1.73,12.91 8.1,19.28 22.79,4.59"
@@ -181,7 +181,7 @@ export function chip({ text, count, selected, view, year }) {
             </svg>
           </span>
         </span>
-        <span class="mdc-evolution-chip__text-label"
+        <span class="mdc-chip__text-label"
           >${text}${until(count?.then((x) => html`<data value="${x}">${x}</data>`, ""))}</span
         >
       </a>

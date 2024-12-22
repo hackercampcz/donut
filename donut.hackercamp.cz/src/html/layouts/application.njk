@@ -2,15 +2,15 @@
 <html lang="cs">
 <head>
   <meta charset="utf-8">
-  <meta name="robots" content="noindex">
   <title>{% block title %}{{ title }}{% endblock %}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="delegate-ch" content="sec-ch-width https://res.cloudinary.com; sec-ch-dpr https://res.cloudinary.com; sec-ch-viewport-width https://res.cloudinary.com;">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   {% include "shared/fonts.html" %}
   {% include "shared/styles.html" %}
+  <link rel="stylesheet" href="/assets/css/index.css">
+  <meta name="generator" content="{{ generator or '@hckr_/blendid - static site generator and assets pipeline' }}">
+  <meta name="author" content="https://hckr.studio/">
   {% include "shared/app-icons.html" %}
   {% block head %}{% endblock %}
-  <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 <body>
 

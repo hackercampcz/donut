@@ -1,5 +1,4 @@
 /*
-  Service-Worker-Allowed: /
   Delegate-CH: sec-ch-width https://res.cloudinary.com; sec-ch-dpr https://res.cloudinary.com; sec-ch-viewport-width https://res.cloudinary.com;
   X-Robots-Tag: noindex
 

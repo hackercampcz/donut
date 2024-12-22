@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <title>{% block title %}{{ title }}{% endblock %}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="delegate-ch" content="sec-ch-width https://res.cloudinary.com; sec-ch-dpr https://res.cloudinary.com; sec-ch-viewport-width https://res.cloudinary.com;">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="robots" content="noindex">
   {% include "shared/fonts.html" %}
   {% include "shared/styles.html" %}
+  <meta name="generator" content="{{ generator or '@hckr_/blendid - static site generator and assets pipeline' }}">
+  <meta name="author" content="https://hckr.studio/">
   {% include "shared/app-icons.html" %}
   {% include "shared/rollbar.njk" %}
   {% block head %}{% endblock %}
@@ -29,18 +30,14 @@
 </main>
 
 <footer class="mdc-layout-grid">
-  <p style="text-align: center">© 2021-{{ currentYear }} Hacker camp crew z.s., IČ <a href="https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1158268&typ=PLATNY">17130476</a></p>
+  <p style="text-align: center">© 2021-{{ currentYear }} Hacker camp crew z.s.,
+    IČ <a href="https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1158268&typ=PLATNY">17130476</a></p>
 </footer>
 
 {% block javascript %}{% endblock %}
 
 <script type="module">
-  function el(tagName, attrs) {
-    const el = document.createElement(tagName);
-    for (const [key, val] of Object.entries(attrs))
-      el.setAttribute(key, val);
-    return el;
-  }
+  const el = (tagName, attrs) => Object.assign(document.createElement(tagName), attrs);
   document.head.appendChild(el("link", {
     rel: "stylesheet",
     href: "/assets/css/main.css"

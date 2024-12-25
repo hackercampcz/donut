@@ -1,3 +1,4 @@
+import { texyTypography } from "@hckr_/blendid/lib/texy.mjs";
 import projectPath from "@hckr_/blendid/lib/projectPath.mjs";
 import gulpMode from "gulp-mode";
 import fs from "node:fs";
@@ -42,7 +43,6 @@ export default {
   stylesheets: { postcss: { plugins: [jitProps(OpenProps)] } },
 
   html: {
-    dataFile: "global.mjs",
     collections: [
       "build",
       "images",
@@ -52,6 +52,7 @@ export default {
       "housing_variants",
       "housing_reservations"
     ],
+    markedExtensions: [texyTypography("cs")],
     nunjucksRender: {
       globals: { currentYear: new Date().getFullYear() },
       filters: {

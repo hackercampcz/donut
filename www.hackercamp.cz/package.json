@@ -1,6 +1,6 @@
 {
   "name": "@hackercamp/web",
-  "packageManager": "yarn@4.5.3",
+  "packageManager": "yarn@4.6.0",
   "dependencies": {
     "@material/layout-grid": "14.0.0"
   },

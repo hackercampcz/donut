@@ -1,6 +1,6 @@
 {
   "name": "@hackercamp/donut",
-  "packageManager": "yarn@4.5.3",
+  "packageManager": "yarn@4.6.0",
   "dependencies": {
     "@hackercamp/infrastructure": "workspace:infrastructure",
     "@hackercamp/lib": "workspace:lib",

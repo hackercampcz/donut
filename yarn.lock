@@ -3459,7 +3459,7 @@ __metadata:
     "@hackercamp/donut": "workspace:donut.hackercamp.cz"
     "@pulumi/aws": "npm:6.66.2"
     "@pulumi/awsx": "npm:2.19.0"
-    "@pulumi/cloudflare": "npm:5.45.0"
+    "@pulumi/cloudflare": "npm:5.46.0"
     "@pulumi/pulumi": "npm:3.144.1"
     "@topmonks/pulumi-aws": "npm:3.1.4"
     esbuild: "npm:0.24.2"
@@ -4789,12 +4789,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pulumi/cloudflare@npm:5.45.0":
-  version: 5.45.0
-  resolution: "@pulumi/cloudflare@npm:5.45.0"
+"@pulumi/cloudflare@npm:5.46.0":
+  version: 5.46.0
+  resolution: "@pulumi/cloudflare@npm:5.46.0"
   dependencies:
-    "@pulumi/pulumi": "npm:^3.136.0"
-  checksum: 10c0/991b9581df5fb82deba6cd151daa787f1cf6319a12b08a9223190969af7f6ee1782c70a1407ae3b5e3fd0e1c32e8091ce4d6fb4a33fe9926e04bd835c4931fa9
+    "@pulumi/pulumi": "npm:^3.142.0"
+  checksum: 10c0/1a74b655db1b830a2925701b32e8aa6215fd7a9969f9f69ef08cbde8e749fe2f77eabb8de7be895fc1636c3d41256c6fbaabc82c6dcbc9386df3d86a3015762c
   languageName: node
   linkType: hard
 

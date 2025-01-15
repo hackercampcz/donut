@@ -3732,8 +3732,8 @@ __metadata:
   dependencies:
     "@hackercamp/api": "workspace:api.hackercamp.cz"
     "@hackercamp/donut": "workspace:donut.hackercamp.cz"
-    "@pulumi/aws": "npm:6.66.2"
-    "@pulumi/awsx": "npm:2.19.0"
+    "@pulumi/aws": "npm:6.66.3"
+    "@pulumi/awsx": "npm:2.20.0"
     "@pulumi/cloudflare": "npm:5.47.0"
     "@pulumi/pulumi": "npm:3.145.0"
     "@topmonks/pulumi-aws": "npm:3.1.4"
@@ -5027,40 +5027,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pulumi/aws@npm:6.66.2":
-  version: 6.66.2
-  resolution: "@pulumi/aws@npm:6.66.2"
+"@pulumi/aws@npm:6.66.3, @pulumi/aws@npm:^6.66.2":
+  version: 6.66.3
+  resolution: "@pulumi/aws@npm:6.66.3"
   dependencies:
     "@pulumi/pulumi": "npm:^3.142.0"
     mime: "npm:^2.0.0"
-  checksum: 10c0/a49ce3ba3f8b3c680419b0c530c055c22bf49a75f9b27624ae2a629086b783264f1918d84240e178deb6e98d381db15d35d6937044e06e0946097e358ba49535
+  checksum: 10c0/c16cbc682c2e66aadc11fc43e41c9b298bd3f96c0d0b7a2ee7899992fca338917c868acf7189e4a9d4c5f48d9d592373052a924019518af25454e73d59a573f4
   languageName: node
   linkType: hard
 
-"@pulumi/aws@npm:^6.59.1":
-  version: 6.59.1
-  resolution: "@pulumi/aws@npm:6.59.1"
-  dependencies:
-    "@pulumi/pulumi": "npm:^3.136.0"
-    builtin-modules: "npm:3.0.0"
-    mime: "npm:^2.0.0"
-    resolve: "npm:^1.7.1"
-  checksum: 10c0/c0250097eda6dfda3d0856fd4b54a1e995bb08895247f2a20bc2665e3da630f80b812e97faa55d4395087190ba4ce575fc02561a9e9f4b51ceff91f2777850bb
-  languageName: node
-  linkType: hard
-
-"@pulumi/awsx@npm:2.19.0":
-  version: 2.19.0
-  resolution: "@pulumi/awsx@npm:2.19.0"
+"@pulumi/awsx@npm:2.20.0":
+  version: 2.20.0
+  resolution: "@pulumi/awsx@npm:2.20.0"
   dependencies:
     "@aws-sdk/client-ecs": "npm:^3.405.0"
-    "@pulumi/aws": "npm:^6.59.1"
-    "@pulumi/docker": "npm:^4.5.1"
-    "@pulumi/pulumi": "npm:^3.136.0"
+    "@pulumi/aws": "npm:^6.66.2"
+    "@pulumi/docker-build": "npm:^0.0.8"
+    "@pulumi/pulumi": "npm:^3.142.0"
     "@types/aws-lambda": "npm:^8.10.23"
     docker-classic: "npm:@pulumi/docker@3.6.1"
     mime: "npm:^2.0.0"
-  checksum: 10c0/df8e5acfce21905a9b6e6f73cbf45c07c3cb2c6f1cdfb017e847d40df977ba38d3901fad682f3d44f3ee6b2af3a72bd47645a68aede8d402349804e2891a7037
+  checksum: 10c0/0799b41df27b163e9b132e27c397743dbf8c7794d248799891991c48c69109a7ceb69d811449cca87da947d7c875b6674fa5ff8422adf9544db191c8d9a7151e
   languageName: node
   linkType: hard
 
@@ -5073,13 +5061,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pulumi/docker@npm:^4.5.1":
-  version: 4.5.7
-  resolution: "@pulumi/docker@npm:4.5.7"
+"@pulumi/docker-build@npm:^0.0.8":
+  version: 0.0.8
+  resolution: "@pulumi/docker-build@npm:0.0.8"
   dependencies:
     "@pulumi/pulumi": "npm:^3.136.0"
-    semver: "npm:^5.4.0"
-  checksum: 10c0/db3466cf101300793cf9f55930a82f4b3d0458d967ece6dd81a782aa3430c06c733d6b88861f01f86c0e249ad9412830410593612005e181d2a59dd1046c6e97
+  checksum: 10c0/ecb5bde0eec3925c68ff58d6bd476b2259d4b314af5828e23a4541dce6f648adbcb89f47cd1a8e032c3b588e2daa8400e4c8671b9f9677b0c9e42d05e4ebe996
   languageName: node
   linkType: hard
 
@@ -7527,13 +7514,6 @@ __metadata:
     base64-js: "npm:^1.3.1"
     ieee754: "npm:^1.2.1"
   checksum: 10c0/2a905fbbcde73cc5d8bd18d1caa23715d5f83a5935867c2329f0ac06104204ba7947be098fe1317fbd8830e26090ff8e764f08cd14fefc977bb248c3487bcbd0
-  languageName: node
-  linkType: hard
-
-"builtin-modules@npm:3.0.0":
-  version: 3.0.0
-  resolution: "builtin-modules@npm:3.0.0"
-  checksum: 10c0/703ff1407313c8ddd4f4b5b5bc31d06187aa8b11d88c3211b36f5203f0f6170eac18cd93d88c3548236168b198d8cc8423906f17b0480198eac1c51fe95a58f6
   languageName: node
   linkType: hard
 
@@ -13549,7 +13529,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^1.1.7, resolve@npm:^1.14.2, resolve@npm:^1.20.0, resolve@npm:^1.22.1, resolve@npm:^1.22.8, resolve@npm:^1.7.1":
+"resolve@npm:^1.1.7, resolve@npm:^1.14.2, resolve@npm:^1.20.0, resolve@npm:^1.22.1, resolve@npm:^1.22.8":
   version: 1.22.8
   resolution: "resolve@npm:1.22.8"
   dependencies:
@@ -13562,7 +13542,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@npm%3A^1.1.7#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.8#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.7.1#optional!builtin<compat/resolve>":
+"resolve@patch:resolve@npm%3A^1.1.7#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.8#optional!builtin<compat/resolve>":
   version: 1.22.8
   resolution: "resolve@patch:resolve@npm%3A1.22.8#optional!builtin<compat/resolve>::version=1.22.8&hash=c3c19d"
   dependencies:

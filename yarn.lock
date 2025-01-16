@@ -3458,9 +3458,9 @@ __metadata:
     "@hackercamp/api": "workspace:api.hackercamp.cz"
     "@hackercamp/donut": "workspace:donut.hackercamp.cz"
     "@pulumi/aws": "npm:6.66.3"
-    "@pulumi/awsx": "npm:2.20.0"
+    "@pulumi/awsx": "npm:2.20.1"
     "@pulumi/cloudflare": "npm:5.47.0"
-    "@pulumi/pulumi": "npm:3.145.0"
+    "@pulumi/pulumi": "npm:3.146.0"
     "@topmonks/pulumi-aws": "npm:3.1.4"
     esbuild: "npm:0.24.2"
     front-matter: "npm:4.0.2"
@@ -4762,9 +4762,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pulumi/awsx@npm:2.20.0":
-  version: 2.20.0
-  resolution: "@pulumi/awsx@npm:2.20.0"
+"@pulumi/awsx@npm:2.20.1":
+  version: 2.20.1
+  resolution: "@pulumi/awsx@npm:2.20.1"
   dependencies:
     "@aws-sdk/client-ecs": "npm:^3.405.0"
     "@pulumi/aws": "npm:^6.66.2"
@@ -4773,7 +4773,7 @@ __metadata:
     "@types/aws-lambda": "npm:^8.10.23"
     docker-classic: "npm:@pulumi/docker@3.6.1"
     mime: "npm:^2.0.0"
-  checksum: 10c0/0799b41df27b163e9b132e27c397743dbf8c7794d248799891991c48c69109a7ceb69d811449cca87da947d7c875b6674fa5ff8422adf9544db191c8d9a7151e
+  checksum: 10c0/df1c81d655305286eb18a9c41ef95e35d6d1bb2522376db4597f384b7eb1973fec37b968c41e47be7f60a143b44bd4b38b791594a9c5466642ed821e9fd9ca02
   languageName: node
   linkType: hard
 
@@ -4795,9 +4795,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pulumi/pulumi@npm:3.145.0":
-  version: 3.145.0
-  resolution: "@pulumi/pulumi@npm:3.145.0"
+"@pulumi/pulumi@npm:3.146.0":
+  version: 3.146.0
+  resolution: "@pulumi/pulumi@npm:3.146.0"
   dependencies:
     "@grpc/grpc-js": "npm:^1.10.1"
     "@logdna/tail-file": "npm:^2.0.6"
@@ -4837,7 +4837,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: 10c0/c58b5e9034dc0987b147d5a515de1df1e0e633513c8b8965ff581d7caab7ce7d71c26523d52f3d5e1bd86a1983c85cdc9f854595ffbb3794c2bd17aae038b049
+  checksum: 10c0/432a4df8ef70a4bcddf7285ba5e90782ba20aad794340fe53742cc97c6780f8f65aaa63af44bf609a478f086687119f8948b7b30f34995d741c4fec671b2f8bf
   languageName: node
   linkType: hard
 

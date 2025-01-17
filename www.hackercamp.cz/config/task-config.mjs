@@ -11,10 +11,8 @@ export default {
   stylesheets: true,
 
   html: {
-    dataFile: "global.mjs",
-    collections: ["build", "images"],
+    data: { collections: ["build", "images"], },
     nunjucksRender: {
-      globals: { currentYear: new Date().getFullYear() },
       filters: {
         isoDate(x) {
           return new Date(x).toISOString();

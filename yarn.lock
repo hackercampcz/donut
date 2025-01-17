@@ -3350,7 +3350,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hackercamp/core@workspace:."
   dependencies:
-    "@hckr_/blendid": "npm:9.2.0"
+    "@hckr_/blendid": "npm:9.2.1"
     "@types/nunjucks": "npm:3.2.6"
     dotenv-cli: "npm:8.0.0"
     dprint: "npm:0.48.0"
@@ -3427,9 +3427,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hckr_/blendid@npm:9.2.0":
-  version: 9.2.0
-  resolution: "@hckr_/blendid@npm:9.2.0"
+"@hckr_/blendid@npm:9.2.1":
+  version: 9.2.1
+  resolution: "@hckr_/blendid@npm:9.2.1"
   dependencies:
     "@csstools/postcss-gamut-mapping": "npm:2.0.7"
     "@vitejs/plugin-basic-ssl": "npm:1.2.0"
@@ -3478,7 +3478,7 @@ __metadata:
     vite: "npm:6.0.7"
   bin:
     blendid: bin/blendid.js
-  checksum: 10c0/35766673b9bbaa3ece998dc689600e174ddc0d52135e8438553e3817cfac1eb97d29267bd05794806eb307826e263c90c8e351bc7916a2bf7e1ffbe8c74a268f
+  checksum: 10c0/f94e89d6a3446639233b2eb2d2cd74135c4b076cd562e147c360edaad72dbc0a4fe476cf39cb07d54c084b31328fac846a456c6e97eae9ab01f8a17252e87a54
   languageName: node
   linkType: hard
 

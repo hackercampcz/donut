@@ -155,8 +155,8 @@
             <span>Administrace</span>,
             <label>ročník
               <select id="year-selector">
-                {% for year in range(2022, currentYear + 1) %}
-                <option>{{ year }}</option>
+                {% for yr in range(2022, year + 1) %}
+                <option>{{ yr }}</option>
                 {% endfor %}
               </select>
             </label>
@@ -176,7 +176,7 @@
 {% block javascript %}
 <script type="module">
   import { main } from "{{ "admin.js" | assetUrl("esm") }}";
-  const build = {{ build | dump(8) | safe }};
+  const build = {{ collections.build | dump(8) | safe }};
   const event = {{ event | dump(8) | safe }};
   const tickets = {{ ticket | dump(8) | safe }};
   const year = {{ year | safe }};

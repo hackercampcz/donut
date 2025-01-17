@@ -1,659 +1,646 @@
 {% from "macros/helpers.njk" import image -%}
 <!DOCTYPE html>
 <html lang="cs">
-  <head>
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex">
-    <title>Často kladené dotazy na Hacker Camp</title>
-    <link rel="preconnect" href="https://res.cloudinary.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta
-      http-equiv="delegate-ch"
-      content="sec-ch-width https://res.cloudinary.com; sec-ch-dpr https://res.cloudinary.com; sec-ch-viewport-width https://res.cloudinary.com;">
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <meta
-      name="description"
-      content="Zažijte netradiční třídenní festival pro lidi z české tech scény. V duchu nekonference či barcampu se od sebe budeme vzájemně učit, bavit se a poznávat.">
-    {% include "shared/fonts.html" %}
-    <style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <title>Často kladené dotazy na Hacker Camp</title>
+  <link rel="preconnect" href="https://res.cloudinary.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        "gtm.start": new Date().getTime(),
+        event: "gtm.js",
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-5F59KHT");
+  </script>
+  <!-- End Google Tag Manager -->
+  {% include "shared/fonts.html" %}
+  <style>
+    :root {
+      --hc-layout-width: 1600px;
+      --hc-font-family: PT Mono, monospace;
+      --hc-background-color: #fff;
+      --hc-text-color: #585a5c;
+      --hc-heading-color: #000;
+      --hc-link-color: #2161b1;
+      --hc-link-visited-color: #bb006e;
+      --hc-gradient: linear-gradient(
+        90deg,
+        #ee771b -0.01%,
+        #e9444e 25.57%,
+        #e62271 42.71%,
+        #684997 78.9%,
+        #3e7abc 100.02%
+      );
+      --hc-gradient-btn: linear-gradient(
+        90deg,
+        #ee771b -0.01%,
+        #e9444e 11.28%,
+        #e62271 24.31%,
+        #684997 36.29%,
+        #3e7abc 50%,
+        #684997 61.3%,
+        #e62271 74.84%,
+        #e9444e 88.39%,
+        #ee771b 100.02%
+      );
+    }
+
+    @media (prefers-color-scheme: dark) {
       :root {
-        --hc-layout-width: 1600px;
-        --hc-font-family: PT Mono, monospace;
-        --hc-background-color: #fff;
-        --hc-text-color: #585a5c;
-        --hc-heading-color: #000;
-        --hc-link-color: #2161b1;
-        --hc-link-visited-color: #bb006e;
-        --hc-gradient: linear-gradient(
-          90deg,
-          #ee771b -0.01%,
-          #e9444e 25.57%,
-          #e62271 42.71%,
-          #684997 78.9%,
-          #3e7abc 100.02%
-        );
-        --hc-gradient-btn: linear-gradient(
-          90deg,
-          #ee771b -0.01%,
-          #e9444e 11.28%,
-          #e62271 24.31%,
-          #684997 36.29%,
-          #3e7abc 50%,
-          #684997 61.3%,
-          #e62271 74.84%,
-          #e9444e 88.39%,
-          #ee771b 100.02%
-        );
+        --hc-background-color: #222;
+        --hc-background-image: url(data:image/png;base64,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);
+        --hc-text-color: #ececec;
+        --hc-heading-color: #fff;
+        --hc-link-color: #5d88c8;
+        --hc-link-visited-color: #ea7c46;
       }
+    }
 
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --hc-background-color: #222;
-          --hc-background-image: url(data:image/png;base64,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);
-          --hc-text-color: #ececec;
-          --hc-heading-color: #fff;
-          --hc-link-color: #5d88c8;
-          --hc-link-visited-color: #ea7c46;
-        }
-      }
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
 
-      html, body {
-        margin: 0;
-        padding: 0;
-      }
+    body {
+      color: var(--hc-text-color);
+      background-color: var(--hc-background-color);
+      background-image: var(--hc-background-image, none);
+      font-family: var(--hc-font-family);
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: 1.5;
+      font-kerning: normal;
+      font-variant-numeric: lining-nums slashed-zero;
+      font-variant-ligatures: common-ligatures contextual;
+      -webkit-font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "zero";
+      font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "zero";
+      -webkit-text-size-adjust: 100%;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: geometricPrecision;
+    }
 
-      body {
-        color: var(--hc-text-color);
-        background-color: var(--hc-background-color);
-        background-image: var(--hc-background-image, none);
-        font-family: var(--hc-font-family);
-        font-size: 16px;
-        letter-spacing: 0;
-        line-height: 1.5;
-        font-kerning: normal;
-        font-variant-numeric: lining-nums slashed-zero;
-        font-variant-ligatures: common-ligatures contextual;
-        -webkit-font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "zero";
-        font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "zero";
-        -webkit-text-size-adjust: 100%;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: geometricPrecision;
-      }
+    a:link {
+      color: var(--hc-link-color);
+    }
 
-      a:link {
-        color: var(--hc-link-color);
-      }
+    a:visited {
+      color: var(--hc-link-visited-color);
+    }
 
-      a:visited {
-        color: var(--hc-link-visited-color);
-      }
+    strong em {
+      font-style: normal;
+    }
 
-      strong em {
-        font-style: normal;
-      }
+    ul {
+      max-width: 60em;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-      ul {
-        max-width: 60em;
-        margin-left: auto;
-        margin-right: auto;
-      }
+    header, footer, section {
+      margin: 0 auto;
+      max-width: var(--hc-layout-width);
+    }
 
-      header, footer, section {
-        margin: 0 auto;
-        max-width: var(--hc-layout-width);
-      }
+    footer::before {
+      content: "";
+      display: block;
+      height: 3px;
+      background-image: var(--hc-gradient);
+    }
 
-      footer::before {
-        content: "";
-        display: block;
-        height: 3px;
-        background-image: var(--hc-gradient);
-      }
+    h1, h2 {
+      font-weight: bold;
+      color: var(--hc-heading-color);
+    }
 
-      h1, h2 {
-        font-weight: bold;
-        color: var(--hc-heading-color);
-      }
+    h1 {
+      margin-bottom: 0;
+      font-weight: 800;
+      font-size: 3em;
+    }
 
-      h1 {
-        margin-bottom: 0;
-        font-weight: 800;
-        font-size: 3em;
-      }
+    hgroup h2 {
+      margin: 0;
+    }
 
-      hgroup h2 {
-        margin: 0;
-      }
+    hgroup small {
+      text-transform: capitalize;
+    }
 
-      hgroup small {
-        text-transform: capitalize;
-      }
+    h2, .hc-text--gay {
+      color: #fff;
+      background-image: var(--hc-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      width: -moz-fit-content;
+      width: fit-content;
+    }
 
-      h2, .hc-text--gay {
-        color: #fff;
-        background-image: var(--hc-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        width: -moz-fit-content;
-        width: fit-content;
-      }
+    section h2 {
+      margin: 3em auto 2em;
+    }
 
-      section h2 {
-        margin: 3em auto 2em;
-      }
+    .hc-hero {
+      font-weight: bold;
+    }
 
-      .hc-hero {
-        font-weight: bold;
-      }
+    .hc-card {
+      background-color: var(--hc-background-color);
+      border: 1px solid #f2f2f2;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.07);
+      padding: var(--mdc-layout-grid-gutter-phone);
+    }
 
+    .hc-card.hc-card--decorated {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hc-card.hc-card--decorated::before {
+      content: "";
+      display: block;
+      width: 135px;
+      height: 4px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      background-image: var(--hc-gradient);
+      transition: width 0.4s ease;
+    }
+
+    .hc-card.hc-card--decorated:active::before, .hc-card.hc-card--decorated:hover::before {
+      width: 100%;
+    }
+
+    .hc-card.hc-card--flat {
+      background-image: var(--hc-gradient);
+      color: #fff;
+    }
+
+    .hc-card.hc-card--centered {
+      text-align: center;
+    }
+
+    .hc-card.hc-card--picture {
+      padding: 0;
+    }
+
+    @media screen and (min-width: 600px) and (max-width: 839px) {
       .hc-card {
-        background-color: var(--hc-background-color);
-        border: 1px solid #f2f2f2;
-        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.07);
-        padding: var(--mdc-layout-grid-gutter-phone);
+        padding: var(--mdc-layout-grid-gutter-tablet);
       }
+    }
 
-      .hc-card.hc-card--decorated {
-        position: relative;
-        z-index: 1;
+    @media screen and (min-width: 840px) {
+      .hc-card {
+        padding: var(--mdc-layout-grid-gutter-desktop);
       }
+    }
 
-      .hc-card.hc-card--decorated::before {
-        content: "";
-        display: block;
-        width: 135px;
-        height: 4px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        background-image: var(--hc-gradient);
-        transition: width 0.4s ease;
-      }
+    .hc-cta, .hc-cta:link, .hc-cta:visited {
+      color: #fff;
+      background-image: var(--hc-gradient-btn);
+      background-size: 200% 100%;
+      font-weight: bold;
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.75em 2.5em;
+      transition: background-position 0.4s ease-in-out;
+    }
 
-      .hc-card.hc-card--decorated:active::before, .hc-card.hc-card--decorated:hover::before {
-        width: 100%;
-      }
+    .hc-cta:active, .hc-cta:hover {
+      background-position: 100% 0;
+    }
 
-      .hc-card.hc-card--flat {
-        background-image: var(--hc-gradient);
-        color: #fff;
-      }
+    .hc-icon-link:link, .hc-icon-link:visited {
+      --icon-color: var(--hc-text-color);
+      color: var(--hc-text-color);
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+    }
 
-      .hc-card.hc-card--centered {
-        text-align: center;
-      }
+    .hc-icon-link:hover {
+      --icon-color: var(--hc-link-color);
+      color: var(--hc-link-color);
+      text-decoration: underline;
+    }
 
-      .hc-card.hc-card--picture {
-        padding: 0;
-      }
+    .hc-icon-link svg {
+      padding-right: 1ex;
+    }
 
-      @media screen and (min-width: 600px) and (max-width: 839px) {
-        .hc-card {
-          padding: var(--mdc-layout-grid-gutter-tablet);
-        }
-      }
+    .hc-link--decorated {
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      padding: 18px 16px;
+      border: 2px solid;
+      border-image-slice: 1;
+      border-image-source: var(--hc-gradient);
+      background-image: var(--hc-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-      @media screen and (min-width: 840px) {
-        .hc-card {
-          padding: var(--mdc-layout-grid-gutter-desktop);
-        }
-      }
+    .hc-navbar {
+      position: fixed;
+      width: 100%;
+      height: 78px;
+      background: var(--hc-background-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      z-index: 1000;
+    }
 
-      .hc-cta, .hc-cta:link, .hc-cta:visited {
-        color: #fff;
-        background-image: var(--hc-gradient-btn);
-        background-size: 200% 100%;
-        font-weight: bold;
-        display: inline-block;
-        text-decoration: none;
-        padding: 0.75em 2.5em;
-        transition: background-position 0.4s ease-in-out;
-      }
+    .hc-navbar__link {
+      line-height: 56px;
+      margin-right: 2em;
+    }
 
-      .hc-cta:active, .hc-cta:hover {
-        background-position: 100% 0;
-      }
+    #top {
+      padding-top: 78px;
+    }
 
-      .hc-icon-link:link, .hc-icon-link:visited {
-        --icon-color: var(--hc-text-color);
-        color: var(--hc-text-color);
-        text-decoration: none;
-        font-weight: bold;
-        display: inline-flex;
-        align-items: center;
-      }
+    .hc-navbar__right {
+      display: none;
+    }
 
-      .hc-icon-link:hover {
-        --icon-color: var(--hc-link-color);
-        color: var(--hc-link-color);
-        text-decoration: underline;
-      }
-
-      .hc-icon-link svg {
-        padding-right: 1ex;
-      }
-
-      .hc-link--decorated {
-        text-decoration: none;
-        font-weight: bold;
-        display: inline-block;
-        padding: 18px 16px;
-        border: 2px solid;
-        border-image-slice: 1;
-        border-image-source: var(--hc-gradient);
-        background-image: var(--hc-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
+    @media screen and (min-width: 600px) {
       .hc-navbar {
-        position: fixed;
-        width: 100%;
-        height: 78px;
-        background: var(--hc-background-color);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-        z-index: 1000;
-      }
-
-      .hc-navbar__link {
-        line-height: 56px;
-        margin-right: 2em;
-      }
-
-      #top {
-        padding-top: 78px;
+        height: 100px;
       }
 
       .hc-navbar__right {
-        display: none;
+        display: flex;
+        justify-content: flex-end;
       }
 
-      @media screen and (min-width: 600px) {
-        .hc-navbar {
-          height: 100px;
-        }
-
-        .hc-navbar__right {
-          display: flex;
-          justify-content: flex-end;
-        }
-
-        #top {
-          padding-top: 100px;
-        }
+      #top {
+        padding-top: 100px;
       }
+    }
 
-      h1 {
-        text-align: center;
-        margin-top: 2em;
-      }
+    h1 {
+      text-align: center;
+      margin-top: 2em;
+    }
 
-      [typeof="Question"]:target {
-        scroll-margin-top: 7em;
-      }
+    [typeof="Question"]:target {
+      scroll-margin-top: 7em;
+    }
 
-      [typeof="Question"] [property="name"] {
-        padding-right: 48px;
-        margin: 0;
-      }
+    [typeof="Question"] [property="name"] {
+      padding-right: 48px;
+      margin: 0;
+    }
 
-      [typeof="Question"]:target [property="name"] {
-        border-bottom: 1px solid #f2f2f2;
-        padding-bottom: 32px;
-        margin-bottom: 32px;
-      }
+    [typeof="Question"]:target [property="name"] {
+      border-bottom: 1px solid #f2f2f2;
+      padding-bottom: 32px;
+      margin-bottom: 32px;
+    }
 
-      [typeof="Question"] [typeof="Answer"] {
-        display: none;
-      }
+    [typeof="Question"] [typeof="Answer"] {
+      display: none;
+    }
 
-      [typeof="Question"]:target [typeof="Answer"] {
-        display: block;
-      }
-    </style>
-    <link rel="canonical" href="https://www.hackercamp.cz/faq/">
-    <link rel="author" href="/humans.txt" type="text/plain">
+    [typeof="Question"]:target [typeof="Answer"] {
+      display: block;
+    }
+  </style>
+  <meta
+    name="description"
+    content="Zažijte netradiční třídenní festival pro lidi z české tech scény. V duchu nekonference či barcampu se od sebe budeme vzájemně učit, bavit se a poznávat.">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/sitemanifest.json">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e052a4">
-    <meta name="msapplication-TileColor" content="#f5f5f5">
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#222222" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://www.hackercamp.cz/faq/">
+  <link rel="author" href="/humans.txt" type="text/plain">
 
-    <!--[if lt IE 9]>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/sitemanifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e052a4">
+  <meta name="msapplication-TileColor" content="#f5f5f5">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#222222" media="(prefers-color-scheme: dark)">
+
+  <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+</head>
 
-    <!-- Google Tag Manager -->
-    <script>
-      (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-          "gtm.start": new Date().getTime(),
-          event: "gtm.js",
-        });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-5F59KHT");
-    </script>
-    <!-- End Google Tag Manager -->
-  </head>
+<body vocab="https://schema.org" typeof="FAQPage">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-5F59KHT"
+    height="0"
+    width="0"
+    style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav class="hc-navbar mdc-layout-grid" style="line-height: 1;">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+      {% include "shared/logo.html" %}
+    </div>
+    <div class="hc-navbar__right mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+      <a class="hc-link hc-navbar__link" href="https://g.page/sobenak?share">Mapa</a>
+      <!--a class="hc-link hc-navbar__link" href="/program/">Program</a-->
+      <a
+        class="hc-link hc-link--decorated"
+        href="/registrace/">Chci se zapojit</a>
+    </div>
+  </div>
+</nav>
 
-  <body vocab="https://schema.org" typeof="FAQPage">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-5F59KHT"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <nav class="hc-navbar mdc-layout-grid" style="line-height: 1;">
-      <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
-          {% include "shared/logo.html" %}
-        </div>
-        <div class="hc-navbar__right mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
-          <a class="hc-link hc-navbar__link" href="https://g.page/sobenak?share">Mapa</a>
-          <!--a class="hc-link hc-navbar__link" href="/program/">Program</a-->
-          <a
-            class="hc-link hc-link--decorated"
-            href="/registrace/">Chci se zapojit</a>
+<div class="hc-code-bg">
+  <header id="top" class="hc-hero mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+      <div class="hc-hero__inner mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+        <iframe
+          width="720"
+          height="405"
+          src="https://www.youtube-nocookie.com/embed/7iQTP3IY0-E?hl=cs&modestbranding=1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          style="aspect-ratio: 16/9; width: 100%; height: auto; max-width: 1280px; margin: 0 auto;"></iframe>
+        <h1 style="margin-top: 1em">FAQs</h1>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="faq" class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div id="faq-1" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-1"><h2 property="name">Na co se můžu těšit?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/1-na-co-se-muzu-tesit.md" %}
         </div>
       </div>
-    </nav>
-
-    <div class="hc-code-bg">
-      <header id="top" class="hc-hero mdc-layout-grid">
-        <div class="mdc-layout-grid__inner">
-          <div class="hc-hero__inner mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-            <iframe
-              width="720"
-              height="405"
-              src="https://www.youtube-nocookie.com/embed/7iQTP3IY0-E?hl=cs&modestbranding=1"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              style="aspect-ratio: 16/9; width: 100%; height: auto; max-width: 1280px; margin: 0 auto;"></iframe>
-            <h1 style="margin-top: 1em">FAQs</h1>
-          </div>
-        </div>
-      </header>
     </div>
 
-    <main id="faq" class="mdc-layout-grid">
-      <div class="mdc-layout-grid__inner">
-        <div id="faq-1" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-1"><h2 property="name">Na co se můžu těšit?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/1-na-co-se-muzu-tesit.md" %}
-            </div>
-          </div>
+    <div id="faq-2" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-2"><h2 property="name">Můžu přijet jen na část programu?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/2-muzu-prijet-jen-na-cast-programu.md" %}
         </div>
+      </div>
+    </div>
 
-        <div id="faq-2" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-2"><h2 property="name">Můžu přijet jen na část programu?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/2-muzu-prijet-jen-na-cast-programu.md" %}
-            </div>
-          </div>
+    <div id="faq-3" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-3"><h2 property="name">Kdo tam bude?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/3-kdo-tam-bude.md" %}
         </div>
+      </div>
+    </div>
 
-        <div id="faq-3" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-3"><h2 property="name">Kdo tam bude?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/3-kdo-tam-bude.md" %}
-            </div>
-          </div>
+    <div id="faq-4" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-4"><h2 property="name">Co když bude pršet?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/4-destiva-varianta.md" %}
         </div>
+      </div>
+    </div>
 
-        <div id="faq-4" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-4"><h2 property="name">Co když bude pršet?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/4-destiva-varianta.md" %}
-            </div>
-          </div>
+    <div id="faq-5" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-5"><h2 property="name">Co budeme dělat večer?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/5-vecerni-aktivity.md" %}
         </div>
+      </div>
+    </div>
 
-        <div id="faq-5" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-5"><h2 property="name">Co budeme dělat večer?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/5-vecerni-aktivity.md" %}
-            </div>
-          </div>
+    <div id="faq-6" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-6"><h2 property="name">
+          Budu se tam moct i&nbsp;hýbat, ať využiju pohyb na čerstvém vzduchu?
+        </h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/6-pohyb.md" %}
         </div>
+      </div>
+    </div>
 
-        <div id="faq-6" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-6"><h2 property="name">
-              Budu se tam moct i&nbsp;hýbat, ať využiju pohyb na čerstvém vzduchu?
-            </h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/6-pohyb.md" %}
-            </div>
-          </div>
+    <div id="faq-7" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-7"><h2 property="name">Co tam budu jíst a pít?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/7-jidlo-a-piti.md" %}
         </div>
+      </div>
+    </div>
 
-        <div id="faq-7" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-7"><h2 property="name">Co tam budu jíst a pít?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/7-jidlo-a-piti.md" %}
-            </div>
-          </div>
-        </div>
+    <div id="faq-8" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-8"><h2 property="name">
+          Jak se vlastně bude na campu spát? Jak vypadá ubytko a co mám&nbsp;čekat?
+        </h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/8-ubytko.md" %}
+          <style>
+            .accommodation__image {
+              height: auto;
+            }
 
-        <div id="faq-8" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-8"><h2 property="name">
-              Jak se vlastně bude na campu spát? Jak vypadá ubytko a co mám&nbsp;čekat?
-            </h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/8-ubytko.md" %}
-              <style>
-                .accommodation__image {
-                  height: auto;
-                }
+            @media screen and (min-width: 480px) and (max-width: 839px) {
+              .accommodation__image {
+                width: 300px;
+              }
 
-                @media screen and (min-width: 480px) and (max-width: 839px) {
-                  .accommodation__image {
-                    width: 300px;
-                  }
+              .accommodation__image--portrait {
+                width: 150px;
+              }
+            }
 
-                  .accommodation__image--portrait {
-                    width: 150px;
-                  }
-                }
+            @media screen and (min-width: 840px) {
+              .accommodation__image {
+                width: 340px;
+              }
 
-                @media screen and (min-width: 840px) {
-                  .accommodation__image {
-                    width: 340px;
-                  }
-
-                  .accommodation__image--portrait {
-                    width: 170px;
-                  }
-                }
-              </style>
-              <div style="display: flex; flex-wrap: wrap; justify-content: space-between">
-                {{
-                  image("faq-ubytko-1.jpg", images,
+              .accommodation__image--portrait {
+                width: 170px;
+              }
+            }
+          </style>
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between">
+            {{ image("faq-ubytko-1.jpg", collections.images,
               phoneWidth=200,
               phoneHeight=132,
               tabletWidth=300,
               width=340,
               alt="šestilůžkový pokoj",
               title="pokoj pro šest",
-              class="accommodation__image")
-                }}
-                {{
-                  image("faq-ubytko-2.jpg", images,
+              class="accommodation__image") }}
+            {{ image("faq-ubytko-2.jpg", collections.images,
               phoneWidth=200,
               phoneHeight=132,
               tabletWidth=300,
               width=340,
               alt="čtyřlůžková chatka",
               title="chatka pro čtyři",
-              class="accommodation__image")
-                }}
-                {{
-                  image("faq-ubytko-3.jpg", images,
+              class="accommodation__image") }}
+            {{ image("faq-ubytko-3.jpg", collections.images,
               phoneWidth=100,
               phoneHeight=132,
               tabletWidth=150,
               width=170,
               alt="dvojlůžková chatka",
               title="chatka pro dva",
-              class="accommodation__image accommodation__image--portrait")
-                }}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="faq-9" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-9"><h2 property="name">Jak s dopravou a parkováním?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/9-doprava-parkovani.md" %}
-            </div>
-          </div>
-        </div>
-
-        <div id="faq-10" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-10"><h2 property="name">
-              Jak řešíte bezpečnost areálu? Budu si mít kde zamknout&nbsp;věci?
-            </h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/10-bezpecnost.md" %}
-            </div>
-          </div>
-        </div>
-
-        <div id="faq-11" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-11"><h2 property="name">Jak bude probíhat komunikace?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/11-komunikace.md" %}
-            </div>
-          </div>
-        </div>
-
-        <div id="faq-12" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-12"><h2 property="name">Je to tábor, znamená to, že můžu vzít děti?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/12-deti.md" %}
-            </div>
-          </div>
-        </div>
-
-        <div id="faq-13" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-13"><h2 property="name">A&nbsp;když jedu do lesa, můžu si vzít svého psa?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/13-psi.md" %}
-            </div>
-          </div>
-        </div>
-
-        <div id="faq-15" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-15"><h2 property="name">Za co platím? Na co prachy půjdou?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/15-za-co-platim.md" %}
-            </div>
-          </div>
-        </div>
-
-        <div id="faq-16" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-16"><h2 property="name">Jak je to s&nbsp;internetem a elektřinou?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/16-internet-elektrina.md" %}
-            </div>
-          </div>
-        </div>
-
-        <div id="faq-17" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-17"><h2 property="name">Storno podmínky vstupenek?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/17-storno.md" %}
-            </div>
-          </div>
-        </div>
-
-        <div id="faq-18" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-18"><h2 property="name">Co s sebou?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/18-co-se-sebou.md" %}
-            </div>
-          </div>
-        </div>
-
-        <div id="faq-19" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-19"><h2 property="name">Co když něco zapomenu?</h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/19-co-kdyz-neco-zapomenu.md" %}
-            </div>
-          </div>
-        </div>
-        <div id="faq-20" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
-          <a href="#faq-20"><h2 property="name">
-              Je konference jen v češtině? Můžu mít přednášku anglicky, vzít česky nemluvícího kolegu?
-            </h2></a>
-          <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
-            <div property="text">
-              {% markdown "faq/20-cestina.md" %}
-            </div>
+              class="accommodation__image accommodation__image--portrait") }}
           </div>
         </div>
       </div>
-    </main>
+    </div>
 
-    <footer class="mdc-layout-grid">
-      <p style="text-align: center">
-        © 2021-{{ currentYear }} Hacker camp crew z.s., IČ <a
-          href="https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1158268&typ=PLATNY">17130476</a>
-      </p>
-    </footer>
-    <script type="module">
-      function el(tagName, attrs) {
-        const el = document.createElement(tagName);
-        for (const [key, val] of Object.entries(attrs)) {
-          el.setAttribute(key, val);
-        }
-        return el;
-      }
-      document.head.appendChild(el("link", {
-        rel: "stylesheet",
-        href: "/assets/css/main.css",
-      }));
-    </script>
-  </body>
+    <div id="faq-9" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-9"><h2 property="name">Jak s dopravou a parkováním?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/9-doprava-parkovani.md" %}
+        </div>
+      </div>
+    </div>
+
+    <div id="faq-10" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-10"><h2 property="name">
+          Jak řešíte bezpečnost areálu? Budu si mít kde zamknout&nbsp;věci?
+        </h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/10-bezpecnost.md" %}
+        </div>
+      </div>
+    </div>
+
+    <div id="faq-11" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-11"><h2 property="name">Jak bude probíhat komunikace?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/11-komunikace.md" %}
+        </div>
+      </div>
+    </div>
+
+    <div id="faq-12" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-12"><h2 property="name">Je to tábor, znamená to, že můžu vzít děti?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/12-deti.md" %}
+        </div>
+      </div>
+    </div>
+
+    <div id="faq-13" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-13"><h2 property="name">A&nbsp;když jedu do lesa, můžu si vzít svého psa?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/13-psi.md" %}
+        </div>
+      </div>
+    </div>
+
+    <div id="faq-15" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-15"><h2 property="name">Za co platím? Na co prachy půjdou?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/15-za-co-platim.md" %}
+        </div>
+      </div>
+    </div>
+
+    <div id="faq-16" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-16"><h2 property="name">Jak je to s&nbsp;internetem a elektřinou?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/16-internet-elektrina.md" %}
+        </div>
+      </div>
+    </div>
+
+    <div id="faq-17" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-17"><h2 property="name">Storno podmínky vstupenek?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/17-storno.md" %}
+        </div>
+      </div>
+    </div>
+
+    <div id="faq-18" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-18"><h2 property="name">Co s sebou?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/18-co-se-sebou.md" %}
+        </div>
+      </div>
+    </div>
+
+    <div id="faq-19" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-19"><h2 property="name">Co když něco zapomenu?</h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/19-co-kdyz-neco-zapomenu.md" %}
+        </div>
+      </div>
+    </div>
+    <div id="faq-20" class="hc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12" typeof="Question">
+      <a href="#faq-20"><h2 property="name">
+          Je konference jen v češtině? Můžu mít přednášku anglicky, vzít česky nemluvícího kolegu?
+        </h2></a>
+      <div property="suggestedAnswer acceptedAnswer" typeof="Answer">
+        <div property="text">
+          {% markdown "faq/20-cestina.md" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="mdc-layout-grid">
+  <p style="text-align: center">
+    © 2021-{{ currentYear }} Hacker camp crew z.s., IČ <a
+      href="https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1158268&typ=PLATNY">17130476</a>
+  </p>
+</footer>
+<script type="module">
+  function el(tagName, attrs) {
+    return Object.assign(document.createElement(tagName), attrs);
+  }
+
+  document.head.appendChild(el("link", {
+    rel: "stylesheet",
+    href: "/assets/css/main.css",
+  }));
+</script>
+</body>
 </html>

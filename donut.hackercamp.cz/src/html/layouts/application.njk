@@ -39,7 +39,7 @@
   import { init as initHeader } from "/assets/esm/header.js";
   import { init as initLayout } from "/assets/esm/layout.js";
 
-  const build = {{ build | dump(8) | safe }};
+  const build = {{ collections.build | dump(8) | safe }};
   const env = Object.assign({ year: {{ year }} }, build);
   initHeader({
     profile: document.getElementById("hc-header__profile"),

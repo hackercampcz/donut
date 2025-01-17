@@ -1,4 +1,4 @@
-{% extends 'layouts/application.njk' %}
+{% extends "layouts/application.njk" %}
 {% block title %}Program Campu{% endblock %}
 {% block head %}
 <style>
@@ -131,7 +131,7 @@
 
 {% block javascript %}
 <script type="module">
-  const build = {{ build | dump(8) | safe }};
+  const build = {{ collections.build | dump(8) | safe }};
   const env = Object.assign({ year: {{ year }} }, build);
   const form = document.forms.editor;
   const modal = document.getElementById("proposal-editor");

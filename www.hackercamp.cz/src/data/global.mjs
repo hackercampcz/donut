@@ -1,5 +1,11 @@
 export default {
+  meta: {
+    lang: "cs"
+  },
   year: 2024,
+  get currentYear() {
+    return new Date().getFullYear();
+  },
   event: {
     name: "Hacker Camp",
     startDate: new Date("2024-08-29T17:00:00+02:00"),

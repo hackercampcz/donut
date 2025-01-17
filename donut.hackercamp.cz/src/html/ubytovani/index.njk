@@ -1,4 +1,4 @@
-{% extends 'layouts/application.njk' %}
+{% extends "layouts/application.njk" %}
 {% block title %}Ubytování na HC{% endblock %}
 {% block head %}
 <style>
@@ -202,14 +202,14 @@
         a my mu pošlem zprávu.</small></p>
     </div>
   </header>
-  <form id="housing" action="{{ build["api-host"] }}housing" method="post" class="mdc-layout-grid">
+  <form id="housing" action="{{ collections.build["api-host"] }}housing" method="post" class="mdc-layout-grid">
     <section class="housing-type">
       <input type="hidden" name="year" value="{{ year }}">
       <div class="hc-card hc-card--decorated">
         <label for="housing-type">Nejprve si prosím vyber, jakou formu ubytování preferuješ:</label>
         <select name="type" id="housing-type" required>
           <option value="custom" selected>Na vlastní pěst</option>
-          {% for type in housing_types %}
+          {% for type in collections.housing_types %}
           <option value="{{ type.name }}">{{ type.title }}</option>
           {% endfor %}
         </select>
@@ -262,7 +262,7 @@
         </button>
       </div>
     </section>
-    {%- for variant in housing_variants %}
+    {%- for variant in collections.housing_variants %}
       {%- set firstPhoto = variant.images.at(0) %}
       {%- set photos = variant.images.slice(1) %}
     <section class="{{ variant.type }}-housing" aria-hidden="true">
@@ -292,7 +292,7 @@
         </div>
         {%- endif %}
         <div class="placements" aria-hidden="true">
-        {%- set housingOfVariant = housing_index.filter(byVariant(variant)) %}
+        {%- set housingOfVariant = collections.housing_index.filter(byVariant(variant)) %}
           {%- for housing in housingOfVariant %}
           <h3>{{ housing.placement }}</h3>
           <div class="booking-grid">
@@ -336,10 +336,10 @@
 <script type="module">
   import { main } from "/assets/esm/housing.js?v2s";
   const formElement = document.getElementById("housing");
-  const build = {{ build | dump(8) | safe }};
+  const build = {{ collections.build | dump(8) | safe }};
   const housing = {
-    reservations: {{ housing_reservations | dump(8) | safe }},
-    variants: {{ housing_variants | dump(8) | safe }},
+    reservations: {{ collections.housing_reservations | dump(8) | safe }},
+    variants: {{ collections.housing_variants | dump(8) | safe }},
   };
   const env = Object.assign({ year: {{ year }} }, build);
   main({ formElement, env, housing });

@@ -3,6 +3,12 @@ function byVariant({ name, type }) {
 }
 
 export default {
+  meta: {
+    lang: "cs"
+  },
+  get currentYear() {
+    return new Date().getFullYear();
+  },
   year: 2024,
   event: {
     name: "Hacker Camp",

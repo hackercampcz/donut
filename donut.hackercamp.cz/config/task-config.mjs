@@ -27,9 +27,9 @@ function assetPath(destPath, key) {
  * @param {Date|null} x
  * @returns {string|null}
  */
-const formatDateTime = (x) =>
-  x?.toLocaleString("cs", { weekday: "short", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" })
-    ?? null;
+const formatDateTime = (x, locale) =>
+  x?.toLocaleString(locale, { weekday: "short", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" })
+  ?? null;
 
 export default {
   images: true,
@@ -38,30 +38,31 @@ export default {
   fonts: true,
   svgSprite: true,
   static: true,
-  esbuild:true,
+  esbuild: true,
 
   stylesheets: { postcss: { plugins: [jitProps(OpenProps)] } },
 
   html: {
-    collections: [
-      "build",
-      "images",
-      "hackers",
-      "housing_index",
-      "housing_types",
-      "housing_variants",
-      "housing_reservations"
-    ],
+    data: {
+      collections: [
+        "build",
+        "images",
+        "hackers",
+        "housing_index",
+        "housing_types",
+        "housing_variants",
+        "housing_reservations"
+      ],
+    },
     markedExtensions: [texyTypography("cs")],
     nunjucksRender: {
-      globals: { currentYear: new Date().getFullYear() },
       filters: {
-        formatDateTime(s) {
+        formatDateTime(s, locale = "cs-CZ") {
           const date = new Date(s);
-          return formatDateTime(date);
+          return formatDateTime(date, locale);
         },
-        price(x, currency) {
-          return new Intl.NumberFormat("cs-CZ", {
+        price(x, currency, locale = "cs-CZ") {
+          return new Intl.NumberFormat(locale, {
             style: currency ? "currency" : undefined,
             currency,
             maximumFractionDigits: 0

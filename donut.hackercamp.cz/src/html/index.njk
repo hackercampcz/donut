@@ -1,4 +1,4 @@
-{% extends 'layouts/application.njk' %}
+{% extends "layouts/application.njk" %}
 
 {% block title %}Donut Hacker Camp{% endblock %}
 
@@ -72,7 +72,7 @@
         <strong><a href="https://hackercampworkspace.slack.com/">hackercampworkspace.slack.com</a></strong>,<br>
         aby ti přihlášení přes Slack fungovalo správně.</p>
       <a class="hc-slack-btn"
-          href="https://slack.com/openid/connect/authorize?scope=openid%20email%20profile&amp;response_type=code&amp;redirect_uri=https%3A%2F%2F{{ build.hostname }}%2F&amp;client_id={{ build["slack/client-id"] }}&amp;team=T01V4Q0ACQ4">
+          href="https://slack.com/openid/connect/authorize?scope=openid%20email%20profile&amp;response_type=code&amp;redirect_uri=https%3A%2F%2F{{ collections.build.hostname }}%2F&amp;client_id={{ collections.build["slack/client-id"] }}&amp;team=T01V4Q0ACQ4">
         <svg xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 122.8 122.8">
           <path
@@ -89,7 +89,7 @@
             fill="#ecb22e"></path>
         </svg>
         Přihlaš se přes Slack</a>
-      <p><small>Máš problém se přes Slack přihlásit?<br><a href="//{{ build.hostname }}/help/#slack-prihlaseni">Zkus tenhle návod</a>.</small></p>
+      <p><small>Máš problém se přes Slack přihlásit?<br><a href="//{{ collections.build.hostname }}/help/#slack-prihlaseni">Zkus tenhle návod</a>.</small></p>
     </div>
   </div>
 {% endblock %}
@@ -103,7 +103,7 @@
       console.log(newModule)
     })
   }
-  const build = {{ build | dump(8) | safe }};
+  const build = {{ collections.build | dump(8) | safe }};
   const env = Object.assign({ year: {{ year }} }, build);
   main({
     searchParams: new URLSearchParams(location.search),

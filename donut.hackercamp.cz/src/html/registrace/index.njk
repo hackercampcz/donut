@@ -1,4 +1,4 @@
-{% extends 'layouts/application.njk' %}
+{% extends "layouts/application.njk" %}
 
 {% block title %}Registrace pro Hackery{% endblock %}
 {% block head %}
@@ -211,7 +211,7 @@
       </script>
     </header>
   </div>
-  <form action='{{ build["api-host"] }}registration' method="post" class="mdc-layout-grid" id="reg">
+  <form action='{{ collections.build["api-host"] }}registration' method="post" class="mdc-layout-grid" id="reg">
     <section id="contact">
       <h2>Hacker</h2>
       <div class="hc-card">
@@ -758,7 +758,7 @@
     <input type="hidden" name="referral">
   </form>
   <script type="module">
-    const build = {{ build | dump(8) | safe }};
+    const build = {{ collections.build | dump(8) | safe }};
     const env = Object.assign({ year: {{ year }} }, build);
     const formElement = document.forms.reg;
     const submitButtonElement = formElement.querySelector("button[type=submit]");

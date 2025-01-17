@@ -1,4 +1,4 @@
-{% extends 'layouts/application.njk' %}
+{% extends "layouts/application.njk" %}
 
 {% block title %}Účastníci Hacker Campu{% endblock %}
 
@@ -61,7 +61,7 @@
       <section id="crew" class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
         <h2>Hacker Camp Crew</h2>
         <ul class="hc-profile-list">
-          {% for hacker in hackers %}
+          {% for hacker in collections.hackers %}
             {% set slug = hacker[0] %}
             {% set profile = hacker[1] %}
             {% set attendee = hacker[2] %}
@@ -87,7 +87,7 @@
       <section id="ucastnici" class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
         <h2>Účastníci {{ year }}</h2>
         <ul class="hc-profile-list">
-          {% for hacker in hackers %}
+          {% for hacker in collections.hackers %}
             {% set slug = hacker[0] %}
             {% set profile = hacker[1] %}
             {% set attendee = hacker[2] %}

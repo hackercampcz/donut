@@ -1,4 +1,4 @@
-{% extends 'layouts/application.njk' %}
+{% extends "layouts/application.njk" %}
 
 {% set profile = item[1] %}
 {% set attendee = item[2] %}
@@ -10,7 +10,7 @@
   <script src="https://cdn.jsdelivr.net/gh/nuxodin/dialog-polyfill@x.x.x/dialog.min.js" type="module"></script>
 {% endblock %}
 
-{%  macro lineup(x) %}
+{% macro lineup(x) %}
   <code>
     {{ "Organizační" if x === "liorg" }}
     {{ "Mainframe" if x === "limain" }}
@@ -68,7 +68,7 @@
 <script type="module">
   import { main } from "/assets/esm/profile.js";
 
-  const build = {{ build | dump(8) | safe }};
+  const build = {{ collections.build | dump(8) | safe }};
   const env = Object.assign({ year: {{ year }} }, build);
   main({
     profile: {{ profile | dump(8) | safe }},

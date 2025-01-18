@@ -16,4 +16,4 @@ A to nejdůležitější - nezapomeň vyplnit fakturační údaje (alespoň celo
 
 Za Tvoji trpělivost děkujeme.
 
-Hacker Camp @crew: Kuba, Kosi, Pája, Kačka, Jirka, Aleš a Ir
+Hacker Camp @crew: Kuba, Kosi, Pája, Jirka, Aleš a Ir

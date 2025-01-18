@@ -15,4 +15,4 @@ jakmile bude Tvoje faktura uhrazená.
 
 Určitě Ti dáme vědět :)
 
-Tvoje Hacker Camp @crew: Kuba, Kosi, Pája, Kačka, Jirka, Aleš a Ir
+Tvoje Hacker Camp @crew: Kuba, Kosi, Pája, Jirka, Aleš a Ir

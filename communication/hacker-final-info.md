@@ -97,4 +97,4 @@ prostě nám napiš na slacku. Nevíš komu psát? Tagni na slacku @crew, odpov�
 
 Těšíme se na viděnou už zítra odpoledne :)
 
-Tvoje #HackerCamp @Crew: Kuba, Kosi, Pája, Kačka, Jirka, Aleš a Ir
+Tvoje #HackerCamp @Crew: Kuba, Kosi, Pája, Jirka, Aleš a Ir

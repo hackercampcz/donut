@@ -133,4 +133,4 @@ Těšíme se na viděnou, táborníku!
 
 Už 29. 8. na Sobeňáku!
 
-Tvoje Hacker Camp #crew: Kačka, Pája, Kuba, Kosi, Jirka, Aleš & Ir
+Tvoje Hacker Camp #crew: Pája, Kuba, Kosi, Jirka, Aleš & Ir

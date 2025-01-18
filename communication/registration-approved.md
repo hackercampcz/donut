@@ -97,4 +97,4 @@ tak nám určitě napiš. Na Slack, na mail. Nebo volej.
 
 Těšíme se na viděnou na Sobeňáku, táborníku!
 
-Tvoje Hacker Camp @crew: Kačka, Pája, Kuba, Kosi, Jirka, Aleš & Ir
+Tvoje Hacker Camp @crew: Pája, Kuba, Kosi, Jirka, Aleš & Ir

@@ -25,4 +25,4 @@ A až budeš ve Slacku, stačí kontaktovat někoho z @crew :)
 
 Těšíme se na viděnou :)
 
-Kuba, Kosi, Pája, Kačka, Jirka, Aleš a Ir
+Kuba, Kosi, Pája, Jirka, Aleš a Ir

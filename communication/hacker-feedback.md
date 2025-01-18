@@ -18,7 +18,7 @@ abyste se zase chtěli do tábora vrátit!
 
 Těšíme se nejpozději zase za rok!
 
-Vaše @crew: Kačka, Pája, Kuba, Kosi, Jirka, Aleš a Ir.
+Vaše @crew: Pája, Kuba, Kosi, Jirka, Aleš a Ir.
 
 PS. Děkujeme i jménem všech dobrovolníku, bez kterých by tábor nestál, nebo byste bez nich nedostali svoje drinky,
 neupekli si buřty na ohni, neudělali své origoš #hackercamp tričko, nebo netrefili parking/cestu na vlak.

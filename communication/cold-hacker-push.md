@@ -34,4 +34,4 @@ A nezapomeň, že s sebou můžeš vzít, nebo za náma poslat super lidi, co ji
 
 Těšíme se na viděnou!
 
-Tvoje Hacker Camp Crew: Kuba, Kosi, Pája, Kačka, Jirka, rarouš & Ir
+Tvoje Hacker Camp Crew: Kuba, Kosi, Pája, Jirka, Aleš & Ir

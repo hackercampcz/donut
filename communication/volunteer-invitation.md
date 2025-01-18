@@ -36,4 +36,4 @@ Bandičko, budeme se těšit!
 
 S pozdravem
 
-Tvoje Hacker Camp @crew: Pája, Kačka, Kuba, Kosi, Jirka, Aleš & Ir
+Tvoje Hacker Camp @crew: Pája, Kuba, Kosi, Jirka, Aleš & Ir

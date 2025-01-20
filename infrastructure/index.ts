@@ -182,7 +182,11 @@ const apiPages = new cloudflare.PagesProject("api", {
         HC_DONUT_HOSTNAME: config.require("donut-domain"),
         HC_WEB_HOSTNAME: config.require("domain"),
         API_HOST: api.url.apply((x) => new URL("/v1/", x).href),
+        FAKTUROID_CLIENT_ID: config.require("fakturoid-client-id"),
       },
+      secrets: {
+        FAKTUROID_CLIENT_SECRET: config.require("fakturoid-client-secret"),
+      }
     },
   },
 });

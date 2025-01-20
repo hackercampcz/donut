@@ -8,9 +8,9 @@ import {
 } from "@aws-sdk/client-dynamodb";
 import { marshall } from "@aws-sdk/util-dynamodb";
 import { getContact } from "../../dynamodb/registrations/paid.mjs";
-import { fetchInvoice } from "../../fakturoid.mjs";
 import { accepted, getHeader, readPayload, seeOther } from "../../http.mjs";
 import { sendEmailWithTemplate, Template } from "../../postmark.mjs";
+import { getAuthHeader, fetchInvoice } from "@hackercamp/lib/fakturoid.js";
 
 /** @typedef { import("@aws-sdk/client-dynamodb").DynamoDBClient } DynamoDBClient */
 /** @typedef { import("@pulumi/awsx/classic/apigateway").Request } APIGatewayProxyEvent */
@@ -54,7 +54,10 @@ async function moveToTrash(db, { email, year, slackID }) {
   await db.send(
     new PutItemCommand({
       TableName: "trash",
-      Item: Object.assign({}, reg, { deletedBy: { S: slackID }, deleted: { S: new Date().toISOString() } })
+      Item: Object.assign({}, reg, {
+        deletedBy: { S: slackID },
+        deleted: { S: new Date().toISOString() }
+      })
     })
   );
   await db.send(
@@ -135,8 +138,10 @@ async function approveVolunteer(db, { registrations, referral }) {
 }
 
 async function invoiced(db, { registrations, invoiceId }) {
-  const { fakturoid_token: token } = process.env;
-  const { created_at: invoiced, id } = await fetchInvoice(token, invoiceId);
+  const { fakturoid_client_id, fakturoid_client_secret } = process.env;
+  const authHeader = await getAuthHeader(fakturoid_client_id, fakturoid_client_secret);
+  // TODO: Fakturoid create invoice (get/create subject; create invoice for subject)
+  const { created_at: invoiced, id } = await fetchInvoice(authHeader, invoiceId);
   for (const key of registrations) {
     console.log({ event: "Marking registration as invoiced", invoiceId, ...key });
     await db.send(

@@ -4,8 +4,9 @@ config:
   hackercamp:api-domain: api.hackercamp.cz
   hackercamp:domain: hackercamp.cz
   hackercamp:donut-domain: donut.hackercamp.cz
-  hackercamp:fakturoid-token:
-    secure: AAABAM/iCsr9NhZmYFVliK6dEFHEy8ZjfPX0mi1ZlE7Llr6QzUKzkOWYpxNjCpiZ0OXRt1Gq6NoRb0kC7zVWQPJLC4X/soso
+  hackercamp:fakturoid-client-id: 0c56913e623e9e3aca9d7f4e93381b9283f5b574
+  hackercamp:fakturoid-client-secret:
+    secure: AAABAPF3dXdFHC2cn3M2ZWMPL+E9isx8OzB7ZbhbToOZmii8XIAuWIgVGEBGxGud65uiympQrdQrNgERKuqP9vaNgbaWNmTR
   hackercamp:fakturoid-webhook-token:
     secure: AAABAC2y0+KPnVrs8PNrWEkp0ytfAbj0bon6HXIVRctgJJsEuoiAFKLUwaTRgd8UENvcfhw4jIhuzpNG3e/Xa6LRPrBk7lIiVnj6nVch1zt89si3ScRWVwH3XYsWkCJE76nVv5YpV3nnRtBdAcX2eQ==
   hackercamp:postmark-webhook-token:

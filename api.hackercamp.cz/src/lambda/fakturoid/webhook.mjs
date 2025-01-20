@@ -93,11 +93,11 @@ export async function fakturoidWebhook(event) {
     console.log({ payload });
     switch (payload.event_name) {
       case "invoice_overdue": {
-        // there is nothing we want to do, just accept it for now.
+        // there is nothing we want to do, accept it for now.
         return withCORS_(accepted());
       }
       case "invoice_paid": {
-        const { invoice_id, paid_at } = payload;
+        const { invoice_id, paid_at, paid_on } = payload;
         const registrations = await getInvoicedRegistrations(db, invoice_id);
         if (!registrations.length) {
           console.log({ event: "Registrations not found", invoice_id });
@@ -105,10 +105,10 @@ export async function fakturoidWebhook(event) {
         }
 
         if (payload.total < 0) {
-          // cancelled invoice has negative total to compensate the balance
-          await markAsCancelled(registrations, paid_at, invoice_id);
+          // canceled invoice has a negative total to compensate the balance
+          await markAsCancelled(registrations, paid_on ?? paid_at, invoice_id);
         } else {
-          await markAsPaid(registrations, paid_at, invoice_id);
+          await markAsPaid(registrations, paid_on ?? paid_at, invoice_id);
         }
         return withCORS_(response({}));
       }

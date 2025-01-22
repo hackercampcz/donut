@@ -7,8 +7,8 @@ import {
   UpdateItemCommand
 } from "@aws-sdk/client-dynamodb";
 import { marshall, unmarshall } from "@aws-sdk/util-dynamodb";
-import { attributes, mapper } from "@hackercamp/lib/attendee.mjs";
-import { selectKeys } from "@hackercamp/lib/object.mjs";
+import { attributes, mapper } from "@hackercamp/lib/attendee.js";
+import { selectKeys } from "@hackercamp/lib/object.js";
 import Rollbar from "../../rollbar.mjs";
 import { attendeeAnnouncement, postChatMessage, postMessage } from "../../slack.mjs";
 

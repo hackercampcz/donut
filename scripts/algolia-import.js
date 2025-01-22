@@ -2,7 +2,7 @@ import { parse } from "https://deno.land/std/flags/mod.ts";
 import { createClient } from "https://denopkg.com/chiefbiiko/dynamodb@master/mod.ts";
 import createSearchClient from "https://esm.sh/algoliasearch@4.16.0";
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
-import { getAttendeesProjection, getRegistrationProjection } from "../lib/search.mjs";
+import { getAttendeesProjection, getRegistrationProjection } from "../lib/search.js";
 
 const dynamo = createClient();
 const indexes = new Map([["hc-registrations", {

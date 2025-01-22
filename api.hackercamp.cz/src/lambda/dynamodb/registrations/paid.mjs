@@ -1,8 +1,8 @@
 import { DynamoDBClient, PutItemCommand, ScanCommand } from "@aws-sdk/client-dynamodb";
 import { SendMessageCommand, SQSClient } from "@aws-sdk/client-sqs";
 import { marshall, unmarshall } from "@aws-sdk/util-dynamodb";
-import { attributes, mapper } from "@hackercamp/lib/attendee.mjs";
-import { selectKeys } from "@hackercamp/lib/object.mjs";
+import { attributes, mapper } from "@hackercamp/lib/attendee.js";
+import { selectKeys } from "@hackercamp/lib/object.js";
 import { sendEmailWithTemplate, Template } from "../../postmark.mjs";
 import Rollbar from "../../rollbar.mjs";
 

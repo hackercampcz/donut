@@ -1,4 +1,4 @@
-import { getToken, validateToken } from "@hackercamp/lib/auth.mjs";
+import { getToken, validateToken } from "@hackercamp/lib/auth.js";
 
 const openRoutes = new Set(["/program/kalendar"]);
 const authorizedOnly = ["/hackers", "/registrace", "/ubytovani", "/program", "/admin"];

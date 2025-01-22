@@ -1,5 +1,5 @@
-import { sortBy } from "@hackercamp/lib/array.mjs";
-import { formatDateTime, formatMoney } from "@hackercamp/lib/format.mjs";
+import { sortBy } from "@hackercamp/lib/array.js";
+import { formatDateTime, formatMoney } from "@hackercamp/lib/format.js";
 import { html } from "lit-html";
 import { map } from "lit-html/directives/map.js";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";

@@ -1,7 +1,7 @@
 import { DynamoDBClient, UpdateItemCommand } from "@aws-sdk/client-dynamodb";
 import { marshall } from "@aws-sdk/util-dynamodb";
-import { getToken, validateToken } from "@hackercamp/lib/auth.mjs";
-import { housingToText } from "@hackercamp/lib/housing.mjs";
+import { getToken, validateToken } from "@hackercamp/lib/auth.js";
+import { housingToText } from "@hackercamp/lib/housing.js";
 import { accepted, getHeader, readPayload, seeOther } from "../http.mjs";
 import { postChatMessage } from "../slack.mjs";
 

@@ -1,4 +1,4 @@
-import { formatMoney } from "@hackercamp/lib/format.mjs";
+import { formatMoney } from "@hackercamp/lib/format.js";
 import { html } from "lit-html";
 import { classMap } from "lit-html/directives/class-map.js";
 import { until } from "lit-html/directives/until.js";

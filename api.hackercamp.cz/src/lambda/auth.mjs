@@ -1,4 +1,4 @@
-import { getToken, validateToken } from "@hackercamp/lib/auth.mjs";
+import { getToken, validateToken } from "@hackercamp/lib/auth.js";
 
 export async function checkAuthorization(event) {
   const token = getToken(event.headers);

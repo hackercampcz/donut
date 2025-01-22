@@ -1,5 +1,6 @@
 {
   "name": "@hackercamp/lib",
+  "type": "module",
   "packageManager": "yarn@4.6.0",
   "dependencies": {
     "cookie": "1.0.2",

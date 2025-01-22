@@ -1,4 +1,4 @@
-import { sortBy } from "@hackercamp/lib/array.mjs";
+import { sortBy } from "@hackercamp/lib/array.js";
 import { html } from "lit-html";
 import { until } from "lit-html/directives/until.js";
 import { ticketName, unauthorized } from "./admin/common.js";

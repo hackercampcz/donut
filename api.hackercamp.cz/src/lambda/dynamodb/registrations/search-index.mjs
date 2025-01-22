@@ -1,6 +1,6 @@
 import { unmarshall } from "@aws-sdk/util-dynamodb";
-import { selectKeys } from "@hackercamp/lib/object.mjs";
-import { getRegistrationProjection } from "@hackercamp/lib/search.mjs";
+import { selectKeys } from "@hackercamp/lib/object.js";
+import { getRegistrationProjection } from "@hackercamp/lib/search.js";
 import { algoliasearch } from "algoliasearch";
 import { fromJS } from "immutable";
 import Rollbar from "../../rollbar.mjs";

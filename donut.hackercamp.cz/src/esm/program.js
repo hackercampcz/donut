@@ -1,4 +1,4 @@
-import { formatLongDayName, formatShortDayName, formatTime } from "@hackercamp/lib/format.mjs";
+import { formatLongDayName, formatShortDayName, formatTime } from "@hackercamp/lib/format.js";
 import { defAtom } from "@thi.ng/atom";
 import structuredClone from "@ungap/structured-clone";
 import { html } from "lit-html";

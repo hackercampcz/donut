@@ -249,7 +249,7 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn-berry
           cache-version: v1-deploy
-          override-ci-command: yarn workspaces focus @hackercamp/web @hackercamp/donut @hackercamp/api
+          override-ci-command: yarn workspaces focus @hackercamp/web @hackercamp/donut @hackercamp/api @hackercamp/lib
       - deploy_website:
           project_name: << parameters.project_name >>
           site_name: << parameters.site_name >>

@@ -248,7 +248,7 @@ jobs:
       # TODO: split install conditionally to razor thin focuses by sitename
       - node/install-packages:
           pkg-manager: yarn-berry
-          cache-version: v1-deploy
+          cache-version: v2-deploy
           override-ci-command: yarn workspaces focus @hackercamp/web @hackercamp/donut @hackercamp/api @hackercamp/lib
       - deploy_website:
           project_name: << parameters.project_name >>

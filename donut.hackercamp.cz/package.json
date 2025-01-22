@@ -2,8 +2,8 @@
   "name": "@hackercamp/donut",
   "packageManager": "yarn@4.6.0",
   "dependencies": {
-    "@hackercamp/infrastructure": "workspace:infrastructure",
-    "@hackercamp/lib": "workspace:lib",
+    "@hackercamp/infrastructure": "workspace:*",
+    "@hackercamp/lib": "workspace:*",
     "@material/chips": "14.0.0",
     "@material/layout-grid": "14.0.0",
     "@material/mwc-drawer": "0.27.0",

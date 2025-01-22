@@ -2889,7 +2889,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hackercamp/api@workspace:api.hackercamp.cz":
+"@hackercamp/api@workspace:*, @hackercamp/api@workspace:api.hackercamp.cz":
   version: 0.0.0-use.local
   resolution: "@hackercamp/api@workspace:api.hackercamp.cz"
   dependencies:
@@ -2898,8 +2898,8 @@ __metadata:
     "@aws-sdk/util-dynamodb": "npm:3.731.1"
     "@cloudflare/workers-types": "npm:4.20250121.0"
     "@fast-csv/format": "npm:5.0.2"
-    "@hackercamp/infrastructure": "workspace:infrastructure"
-    "@hackercamp/lib": "workspace:lib"
+    "@hackercamp/infrastructure": "workspace:*"
+    "@hackercamp/lib": "workspace:*"
     "@hckr_/cloudflare-pages-plugin-rollbar": "npm:1.1.4"
     "@thi.ng/transducers": "npm:9.2.15"
     "@types/node": "npm:22.10.7"
@@ -2925,13 +2925,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hackercamp/donut@workspace:donut.hackercamp.cz":
+"@hackercamp/donut@workspace:*, @hackercamp/donut@workspace:donut.hackercamp.cz":
   version: 0.0.0-use.local
   resolution: "@hackercamp/donut@workspace:donut.hackercamp.cz"
   dependencies:
     "@cloudflare/workers-types": "npm:4.20250121.0"
-    "@hackercamp/infrastructure": "workspace:infrastructure"
-    "@hackercamp/lib": "workspace:lib"
+    "@hackercamp/infrastructure": "workspace:*"
+    "@hackercamp/lib": "workspace:*"
     "@material/chips": "npm:14.0.0"
     "@material/layout-grid": "npm:14.0.0"
     "@material/mwc-drawer": "npm:0.27.0"
@@ -2959,12 +2959,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hackercamp/infrastructure@workspace:infrastructure":
+"@hackercamp/infrastructure@workspace:*, @hackercamp/infrastructure@workspace:infrastructure":
   version: 0.0.0-use.local
   resolution: "@hackercamp/infrastructure@workspace:infrastructure"
   dependencies:
-    "@hackercamp/api": "workspace:api.hackercamp.cz"
-    "@hackercamp/donut": "workspace:donut.hackercamp.cz"
+    "@hackercamp/api": "workspace:*"
+    "@hackercamp/donut": "workspace:*"
     "@pulumi/aws": "npm:6.66.3"
     "@pulumi/awsx": "npm:2.21.0"
     "@pulumi/cloudflare": "npm:5.48.0"
@@ -2976,7 +2976,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hackercamp/lib@workspace:lib":
+"@hackercamp/lib@workspace:*, @hackercamp/lib@workspace:lib":
   version: 0.0.0-use.local
   resolution: "@hackercamp/lib@workspace:lib"
   dependencies:

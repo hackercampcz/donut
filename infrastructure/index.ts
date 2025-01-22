@@ -176,13 +176,14 @@ const apiPages = new cloudflare.PagesProject("api", {
   productionBranch: "trunk",
   deploymentConfigs: {
     production: {
-      compatibilityDate: "2023-09-29",
+      compatibilityDate: "2024-11-11",
       environmentVariables: {
+        API_HOST: api.url.apply((x) => new URL("/v1/", x).href),
+        FAKTUROID_CLIENT_ID: config.require("fakturoid-client-id"),
         HC_API_HOSTNAME: config.require("api-domain"),
         HC_DONUT_HOSTNAME: config.require("donut-domain"),
         HC_WEB_HOSTNAME: config.require("domain"),
-        API_HOST: api.url.apply((x) => new URL("/v1/", x).href),
-        FAKTUROID_CLIENT_ID: config.require("fakturoid-client-id"),
+        ROLLBAR_TOKEN: config.require("rollbar-access-token"),
       },
       secrets: {
         FAKTUROID_CLIENT_SECRET: config.require("fakturoid-client-secret"),

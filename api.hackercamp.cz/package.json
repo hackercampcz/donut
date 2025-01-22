@@ -7,6 +7,7 @@
     "@fast-csv/format": "5.0.2",
     "@hackercamp/infrastructure": "workspace:infrastructure",
     "@hackercamp/lib": "workspace:lib",
+    "@hckr_/cloudflare-pages-plugin-rollbar": "1.1.4",
     "@thi.ng/transducers": "9.2.15",
     "algoliasearch": "5.19.0",
     "fast-xml-parser": "4.5.1",

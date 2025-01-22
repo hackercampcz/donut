@@ -1,8 +1,8 @@
 /* TEAM */
 Copy writing: Irena Zatloukalová <ir@izatlouk.cz>
-Graphic design & Photos: Pavel Trnka <pavel.trnka@topmonks.com>
+Graphic design & Photos: Pavel Trnka <trnkadigital@gmail.com>
 Photos: Pavel Kosina <pav.kosina@gmail.com>
 Photos: Petr Milhe <petr.mihle@gmail.com>
-Development: Aleš Roubíček <ales.roubicek@topmonks.com>
-Development: Dan Hromada <daniel.hromada@topmonks.com>
+Development: Aleš Roubíček <ales.roubicek@hckr.studio>
+Development: Dan Hromada <daniel.hromada@hckr.studio>
 Executive Director: Jakub Balada <jakub.balada@gmail.com>

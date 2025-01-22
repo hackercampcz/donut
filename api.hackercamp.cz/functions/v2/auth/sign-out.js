@@ -10,13 +10,12 @@ export async function onRequestGet({ request, env }) {
   // For local development, we need to relax Cross site security
   const sameSite = origin.includes("localhost") ? "None" : "Strict";
 
-  const expired = new Date(0).toUTCString();
   return new Response(null, {
     status: 302,
     headers: {
       "Location": origin,
       "Set-Cookie": createCookie("", {
-        expires: expired,
+        expiresIn: "1 year ago",
         domain: "hackercamp.cz",
         path: "/",
         sameSite,

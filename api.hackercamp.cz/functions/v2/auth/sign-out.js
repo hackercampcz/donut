@@ -1,3 +1,5 @@
+import { createCookie } from "@hackercamp/lib/auth.js";
+
 /**
  * @param {EventContext<Env>} context
  * @returns {Promise<Response>}
@@ -13,7 +15,14 @@ export async function onRequestGet({ request, env }) {
     status: 302,
     headers: {
       "Location": origin,
-      "Set-Cookie": `hc-id=; Expires=${expired}; Domain=hackercamp.cz; Path=/; SameSite=${sameSite}; Secure; HttpOnly`
+      "Set-Cookie": createCookie("", {
+        expires: expired,
+        domain: "hackercamp.cz",
+        path: "/",
+        sameSite,
+        secure: true,
+        httpOnly: true
+      })
     }
   });
 }

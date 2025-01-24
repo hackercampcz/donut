@@ -3302,7 +3302,7 @@ __metadata:
     lit: "npm:3.2.1"
     lit-html: "npm:3.2.1"
     marked: "npm:15.0.6"
-    material-icons: "npm:1.13.12"
+    material-icons: "npm:1.13.13"
     open-props: "npm:1.7.10"
     postcss-jit-props: "npm:1.0.15"
     ramda: "npm:0.30.1"
@@ -10325,10 +10325,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"material-icons@npm:1.13.12":
-  version: 1.13.12
-  resolution: "material-icons@npm:1.13.12"
-  checksum: 10c0/77517592a7048bbb1fc2b00d008c795c9560ef42c911cf66afc09ce3d319ce1f659d5d993c961015bbb3dce0305bc5fcc19df32a8a5885f39b4203f6bc35ad47
+"material-icons@npm:1.13.13":
+  version: 1.13.13
+  resolution: "material-icons@npm:1.13.13"
+  checksum: 10c0/b21a46bc024b46efbf622b0171a6ee9b107c37010fe218b8960888a4386fb3ba93e4e29e3a8b4e4d7c481f97a63d5c9f5e4b827ae5be8f448d189cfc41d00390
   languageName: node
   linkType: hard
 

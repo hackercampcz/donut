@@ -157,7 +157,7 @@ jobs:
         type: string
         default: ""
     docker:
-      - image: cimg/node:22.13.1
+      - image: cimg/node:22.14.0
     resource_class: arm.large
     environment:
       ROLLBAR_ACCESS_TOKEN: << parameters.rollbar_access_token >>

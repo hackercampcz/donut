@@ -4,6 +4,6 @@
   "packageManager": "yarn@4.6.0",
   "dependencies": {
     "cookie": "1.0.2",
-    "jose": "5.9.6"
+    "jose": "5.10.0"
   }
 }
